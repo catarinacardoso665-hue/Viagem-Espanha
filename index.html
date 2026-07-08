@@ -301,29 +301,24 @@
     .route::before, .route::after{ display:none; }
     .route-line{ width:100%; }
   }
+
+  /* ---------- TRANSFER (leg change, shown between cities) ---------- */
+  .transfer{
+    max-width:920px; margin:90px auto 0; padding:0 24px;
+    position:relative; z-index:1;
+  }
+  .transfer .day-tag{ background:var(--tile); }
+  .transfer h2{ font-size:clamp(26px,4.4vw,38px); margin-top:16px; }
+  .transfer .route{ margin-top:28px; }
 </style>
 </head>
 <body>
-<style>
-/* capa personalizada */
-.hero-premium{background:url('75007bc6-c2c0-4a08-8ade-c547eeae3e70.png') center/cover!important;}
-.gallery{max-width:920px;margin:80px auto;padding:0 24px}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.gallery img{height:220px;border-radius:16px;object-fit:cover}.gallery h2{text-align:center;font-family:'Fraunces',serif;font-size:42px;margin-bottom:30px}
-</style>
-<style>
-body{background:linear-gradient(135deg,#fff,#fff6fa,#fff8f3);font-family:Poppins,sans-serif}
-.hero-premium{position:relative;height:70vh;background:url('image(1).png') center/cover;border-radius:0 0 40px 40px;display:flex;align-items:flex-end}
-.hero-premium:before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(58,52,64,.55),rgba(255,255,255,.1));}
-.hero-content{position:relative;color:white;padding:60px;max-width:700px}
-.hero-content h1{font-family:'Playfair Display',serif;font-size:64px;margin:0}
-.float-card{background:rgba(255,255,255,.65);backdrop-filter:blur(10px);padding:18px;border-radius:20px;color:#3A3440;display:inline-block;margin-top:20px}
-</style>
-<div class='hero-premium'><div class='hero-content'><h1>Vamos a la España</h1><p>Girls Trip • Madrid • 29–30 Julho 2026</p><div class='float-card'>Porto → Madrid • 2 dias • Boutique Travel Journal</div></div></div>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Roteiro de viagem</div>
-    <h1 class="title">Fim de semana<br><em>em Madrid</em></h1>
-    <p class="subtitle">Duas amigas, um autocarro noturno e quarenta e oito horas para percorrer o centro histórico, a Gran Vía e o Bernabéu — passo a passo, hora a hora.</p>
+    <h1 class="title">De Madrid<br><em>a Alicante</em></h1>
+    <p class="subtitle">Duas amigas, um autocarro noturno e uma semana inteira para percorrer o centro histórico de Madrid, a Gran Vía, o Bernabéu, as praias e calas da Costa Blanca e o castelo de Alicante — passo a passo, hora a hora.</p>
 
     <div class="route">
       <div class="route-stop">
@@ -341,9 +336,9 @@ body{background:linear-gradient(135deg,#fff,#fff6fa,#fff8f3);font-family:Poppins
     </div>
 
     <div class="stat-row">
-      <div class="stat"><div class="n">15</div><div class="l">pontos de interesse</div></div>
-      <div class="stat"><div class="n">2</div><div class="l">dias completos</div></div>
-      <div class="stat"><div class="n">1</div><div class="l">passe de metro 24h</div></div>
+      <div class="stat"><div class="n">29</div><div class="l">pontos de interesse</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">dias completos</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">cidades e costa</div></div>
     </div>
   </div>
 </section>
@@ -544,27 +539,250 @@ body{background:linear-gradient(135deg,#fff,#fff6fa,#fff8f3);font-family:Poppins
     <div class="stop-time mono">10:35</div>
     <div class="stop-card">
       <h3>Metro para Madrid Atocha</h3>
-      <p class="stop-note">Fim do roteiro — boa viagem de regresso! 🚆</p>
+      <p class="stop-note">Não é o fim — é só a mudança de capítulo. Em Atocha, apanha-se o comboio para Alicante.</p>
     </div>
   </div>
 
 </div>
 
-
-<section class="gallery">
-<h2>Madrid em imagens</h2>
-<div class="gallery-grid">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Mayor%20de%20Madrid%2006.jpg" alt="Plaza Mayor">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20Real%20de%20Madrid%20-%2021.jpg" alt="Palacio Real">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20de%20Debod%20-%2007.jpg" alt="Templo de Debod">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG" alt="Gran Via">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20de%20Cristal%2C%20Retiro%2C%20Madrid.jpg" alt="Retiro">
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%20Stadium%20-%20Exterior%2002.JPG" alt="Bernabeu">
+<div class="transfer">
+  <span class="day-tag">🚆 Mudança de cidade</span>
+  <h2>Madrid → Alicante</h2>
+  <div class="route">
+    <div class="route-stop">
+      <div class="city">Madrid</div>
+      <div class="time mono">11:05</div>
+      <div class="date">30 de julho</div>
+    </div>
+    <div class="route-line"><span class="bus">🚆</span></div>
+    <div class="route-stop">
+      <div class="city">Alicante</div>
+      <div class="time mono">13:31</div>
+      <div class="date">30 de julho</div>
+    </div>
+    <div class="route-meta">Madrid Atocha → Terminal de Alicante</div>
+  </div>
 </div>
-</section>
+
+<div class="day-header">
+  <span class="day-tag">Dia 3 · 30 de julho</span>
+  <h2>Chegada a Alicante + primeira praia + centro</h2>
+  <p class="day-sub">Chegada de comboio, check-in junto à Calle Zaragoza e uma tarde a pé pelo Barrio de Santa Cruz, o centro histórico e a Playa del Postiguet.</p>
+</div>
+
+<div class="timeline">
+
+  <div class="stop">
+    <div class="stop-time mono">13:31</div>
+    <div class="stop-card">
+      <h3>Chegada ao Terminal de Alicante</h3>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">13:30/14:00</div>
+    <div class="stop-card">
+      <h3>Check-in no alojamento</h3>
+      <p class="stop-note">📍 Calle Zaragoza — deixar as malas e preparar a tarde.</p>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">15:00</div>
+    <div class="stop-card">
+      <h3>Conhecer Alicante a pé</h3>
+      <div class="poi-chain">
+        <span>1 · Barrio de Santa Cruz ⭐</span>
+        <span>2 · Concatedral de San Nicolás</span>
+        <span>3 · Plaza del Ayuntamiento</span>
+        <span>4 · Playa del Postiguet</span>
+      </div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barrio%20de%20Santa%20Cruz%2C%20Alicante.jpg" alt="Barrio de Santa Cruz, Alicante"></div>
+      <p class="stop-note" style="margin-top:12px;">Centro histórico: Concatedral de San Nicolás e Plaza del Ayuntamiento.</p>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Concatedral%20Nicolas%20de%20Bari%20Alicante.JPG" alt="Concatedral de San Nicolás, Alicante"></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20-%20Plaza%20del%20Ayuntamiento%201.jpg" alt="Plaza del Ayuntamiento, Alicante"></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Playa%20del%20Postiguet%2C%20Alicante.JPG" alt="Playa del Postiguet, Alicante"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">final do dia</div>
+    <div class="stop-card">
+      <h3>Mercadona para compras</h3>
+      <div class="tag-row">
+        <span class="tag">pequenos-almoços</span><span class="tag">águas</span><span class="tag">fruta</span>
+        <span class="tag">snacks</span><span class="tag">comida para os passeios</span>
+      </div>
+      <p class="stop-note" style="margin-top:12px;">Depois, um passeio pela Explanada de España — a famosa avenida das palmeiras.</p>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20-%20Paseo%20de%20la%20Explanada%20de%20Espa%C3%B1a%2001.jpg" alt="Explanada de España, Alicante"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="day-header">
+  <span class="day-tag">Dia 4 · 31 de julho</span>
+  <h2>Benidorm + Playa de San Juan 🚗</h2>
+  <p class="day-sub">Dia de carro alugado: manhã em Benidorm, mergulho na Playa de Levante e tarde na Playa de San Juan, já de volta a Alicante.</p>
+</div>
+
+<div class="timeline">
+
+  <div class="stop">
+    <div class="stop-time mono">08:30/09:00</div>
+    <div class="stop-card">
+      <h3>Alugar carro e saída para Benidorm</h3>
+      <p class="stop-note">🚗 Alicante → Benidorm: cerca de 45 minutos.</p>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">manhã</div>
+    <div class="stop-card">
+      <h3>Benidorm</h3>
+      <div class="poi-chain">
+        <span>1 · Centro histórico</span>
+        <span>2 · Balcón del Mediterráneo ⭐</span>
+        <span>3 · Iglesia de San Jaime y Santa Ana</span>
+        <span>4 · Playa de Levante</span>
+      </div>
+      <p class="stop-note" style="margin-top:12px;">Passeio pelas ruas antigas do centro histórico.</p>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Benidorm%20-%20Balc%C3%B3n%20del%20Mediterr%C3%A1neo%201.jpg" alt="Balcón del Mediterráneo, Benidorm"></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia%20de%20San%20Jaime%20y%20Santa%20Ana%2C%20Benidorm%2C%20Espa%C3%B1a%2C%202014-07-02%2C%20DD%2032.JPG" alt="Iglesia de San Jaime y Santa Ana, Benidorm"></div>
+      <p class="stop-note" style="margin-top:12px;">Dar um mergulho na Playa de Levante antes de seguir viagem.</p>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Playa%20de%20Levante%2C%20Benidorm%2C%20Espa%C3%B1a%2C%202014-07-02%2C%20DD%2086.JPG" alt="Playa de Levante, Benidorm"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">13:30/14:00</div>
+    <div class="stop-card">
+      <h3>Regresso a Alicante</h3>
+      <p class="stop-note">Levar sandes para comer pelo caminho ou já na praia.</p>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">tarde</div>
+    <div class="stop-card">
+      <h3>Playa de San Juan</h3>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20-%20Playa%20de%20San%20Juan%2001.jpg" alt="Playa de San Juan, Alicante"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="day-header">
+  <span class="day-tag">Dia 5 · 1 de agosto</span>
+  <h2>Cala Granadella + Cala El Portet 🚗</h2>
+  <p class="day-sub">O dia das praias mais bonitas do roteiro — águas transparentes, penhascos e muito protetor solar.</p>
+</div>
+
+<div class="timeline">
+
+  <div class="stop">
+    <div class="stop-time mono">08:00</div>
+    <div class="stop-card">
+      <h3>Saída de Alicante</h3>
+      <p class="stop-note">🚗 Cerca de 1h15/1h30 até à Cala Granadella.</p>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">09:30–13:00</div>
+    <div class="stop-card">
+      <h3>Cala Granadella ⭐⭐⭐</h3>
+      <p class="stop-note">Chegar cedo. Fazer: nadar, aproveitar a água transparente, fotos.</p>
+      <div class="tag-row"><span class="tag">sandes</span><span class="tag">muita água</span><span class="tag">protetor solar</span></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Javea-Cala-Granadella.JPG" alt="Cala Granadella, Xàbia"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">13:00</div>
+    <div class="stop-card">
+      <h3>Deslocação</h3>
+      <p class="stop-note">🚗 Cala Granadella → Cala El Portet: cerca de 25–35 minutos.</p>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">14:00–17:30</div>
+    <div class="stop-card">
+      <h3>Cala El Portet</h3>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20platja%20del%20Portet%20de%20Moraira.JPG" alt="Cala El Portet, Moraira"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">18:00/18:30</div>
+    <div class="stop-card">
+      <h3>Regresso a Alicante</h3>
+    </div>
+  </div>
+
+</div>
+
+<div class="day-header">
+  <span class="day-tag">Dia 6 · 2 de agosto</span>
+  <h2>Castelo de Santa Bárbara + despedida de Alicante</h2>
+  <p class="day-sub">Manhã no grande ponto turístico da cidade, últimos passeios junto ao mar e comboio para Valência às 14:40.</p>
+</div>
+
+<div class="timeline">
+
+  <div class="stop">
+    <div class="stop-time mono">09:30</div>
+    <div class="stop-card">
+      <h3>Castelo de Santa Bárbara ⭐⭐⭐</h3>
+      <p class="stop-note">O grande ponto turístico de Alicante. Ver: muralhas, vistas sobre a cidade, porto, praias.</p>
+      <div class="tag-row"><span class="tag">⏱️ 1h30–2h</span></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg" alt="Castillo de Santa Bárbara, Alicante"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">depois</div>
+    <div class="stop-card">
+      <h3>Últimos pontos</h3>
+      <p class="stop-note">Casa Carbonell — edifício histórico junto à Explanada — e um passeio final pelo porto e marina.</p>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20Carbonell%2C%20Alicante.jpg" alt="Casa Carbonell, Alicante"></div>
+      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Alicante%20desde%20el%20Castillo%20de%20Santa%20B%C3%A1rbara.JPG" alt="Porto de Alicante"></div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-time mono">12:45/13:00</div>
+    <div class="stop-card">
+      <h3>Voltar ao alojamento</h3>
+      <p class="stop-note">Buscar as malas e seguir para a estação.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="transfer">
+  <span class="day-tag">🚆 Mudança de cidade</span>
+  <h2>Alicante → Valência</h2>
+  <div class="route">
+    <div class="route-stop">
+      <div class="city">Alicante</div>
+      <div class="time mono">14:40</div>
+      <div class="date">2 de agosto</div>
+    </div>
+    <div class="route-line"><span class="bus">🚆</span></div>
+    <div class="route-stop">
+      <div class="city">Valência</div>
+      <div class="time mono">chegada</div>
+      <div class="date">2 de agosto</div>
+    </div>
+    <div class="route-meta">Fim do roteiro — boa viagem de regresso! 🚆</div>
+  </div>
+</div>
+
 <footer>
   <div class="sig">Boa viagem, meninas ✈</div>
-  <p>Roteiro feito com carinho para a nossa escapadinha a Madrid.</p>
+  <p>Roteiro feito com carinho para a nossa escapadinha a Madrid e Alicante.</p>
 </footer>
 
 </body>
