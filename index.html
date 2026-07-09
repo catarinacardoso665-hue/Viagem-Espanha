@@ -297,10 +297,25 @@
   footer .sig{ font-family:'Fraunces', serif; font-style:italic; font-size:20px; color:var(--red); margin-bottom:10px; }
 
   @media(max-width:640px){
-    .route{ flex-direction:column; }
+    .route{ flex-direction:column; align-items:stretch; }
     .route::before, .route::after{ display:none; }
-    .route-line{ width:100%; }
+    .route-line{ flex:none; width:100%; height:34px; margin:4px 0; }
+    .route-stop{ min-width:0; }
+
+    .stop{ grid-template-columns:52px 1fr; gap:10px; }
+    .stop-time{ font-size:11px; white-space:normal; word-break:break-word; line-height:1.25; }
+    .stop-time::after{ right:-7px; }
+
+    .stop-card{ padding:18px 16px; }
+    .stop-card h3{ font-size:18px; }
+
+    .day-header, .timeline, footer, .transfer{ padding-left:16px; padding-right:16px; }
+    .hero{ padding:60px 16px 44px; }
+
+    .night-section{ padding:50px 16px; }
   }
+
+  html, body{ overflow-x:hidden; max-width:100%; }
 
   /* ---------- TRANSFER (leg change, shown between cities) ---------- */
   .transfer{
