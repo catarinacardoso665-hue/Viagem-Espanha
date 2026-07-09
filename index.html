@@ -84,6 +84,26 @@
     margin-top:14px;
   }
 
+  /* hero closing photo banner */
+  .hero-photo{
+    margin-top:56px;
+    width:100vw;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    height:min(60vh, 520px);
+    overflow:hidden;
+    position:relative;
+  }
+  .hero-photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(37,48,74,0) 55%, var(--paper) 100%);
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; }
+  @media(max-width:640px){
+    .hero-photo{ height:340px; margin-top:36px; }
+  }
+
   /* route ticket */
   .route{
     margin-top:48px;
@@ -332,7 +352,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Roteiro de viagem</div>
-    <h1 class="title">De Madrid<br><em>a Alicante</em></h1>
+    <h1 class="title">Vamos a<br><em>la España</em></h1>
     <p class="subtitle">Duas amigas, um autocarro noturno e uma semana inteira para percorrer o centro histórico de Madrid, a Gran Vía, o Bernabéu, as praias e calas da Costa Blanca e o castelo de Alicante — passo a passo, hora a hora.</p>
 
     <div class="route">
@@ -355,6 +375,10 @@
       <div class="stat"><div class="n">9</div><div class="l">dias completos</div></div>
       <div class="stat"><div class="n">4</div><div class="l">cidades e costa</div></div>
     </div>
+  </div>
+
+  <div class="hero-photo">
+    <img src="grupo-hero.jpg" alt="As cinco amigas, prontas para a viagem" loading="lazy" decoding="async">
   </div>
 </section>
 
