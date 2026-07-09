@@ -205,8 +205,12 @@
     color:var(--red);
     font-weight:700;
     padding-top:4px;
+    padding-right:14px;
     text-align:right;
     position:relative;
+    line-height:1.35;
+    word-break:keep-all;
+    overflow-wrap:break-word;
   }
   .stop-time::after{
     content:"";
@@ -323,8 +327,8 @@
     .route-stop{ min-width:0; }
 
     .stop{ grid-template-columns:56px 1fr; gap:12px; }
-    .stop-time{ font-size:10.5px; white-space:normal; word-break:break-word; line-height:1.3; padding-right:10px; }
-    .stop-time::after{ right:-14px; top:6px; }
+    .stop-time{ font-size:10.5px; white-space:normal; word-break:break-word; line-height:1.4; padding-right:16px; }
+    .stop-time::after{ right:-16px; top:6px; }
 
     .stop-card{ padding:18px 16px; }
     .stop-card h3{ font-size:18px; }
@@ -705,7 +709,7 @@
     <div class="stop-time mono">tarde</div>
     <div class="stop-card">
       <h3>Playa de San Juan</h3>
-      <p class="stop-note"> Praia que tem os postos de nadador salvador semalhante a Miami.</p>
+      <p class="stop-note"> Praia que tem os postos de nadador salvador semelhante a Miami.</p>
       <div class="stop-photo"><img src="https://x.cdrst.com/zona/mr2/fotos/playa_de_san_juan/playa_de_san_juan_c6e0ad75d438cceb1fa6da01a63e88bc.jpg" alt="Playa de San Juan, Alicante" loading="lazy" decoding="async"></div>
     </div>
   </div>
@@ -732,9 +736,10 @@
     <div class="stop-time mono">09:30–13:00</div>
     <div class="stop-card">
       <h3>Cala Granadella ⭐⭐⭐</h3>
-      <p class="stop-note">Chegar cedo. Fazer: nadar, aproveitar a água transparente, fotos.</p>
+      <p class="stop-note">Chegar cedo. Nadar, aproveitar a água transparente, fotos:)</p>
       <div class="tag-row"><span class="tag">sandes</span><span class="tag">muita água</span><span class="tag">protetor solar</span></div>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cala%20de%20la%20Granadella%2C%20J%C3%A1vea%2C%20Espa%C3%B1a%2C%202014-07-01%2C%20DD%2037.JPG?width=900" alt="Cala Granadella, Xàbia — água cristalina" loading="lazy" decoding="async"></div>
+    </div>
   </div>
 
   <div class="stop">
