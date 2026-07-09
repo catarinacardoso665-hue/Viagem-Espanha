@@ -183,24 +183,25 @@
   }
   .stop{
     position:relative;
-    display:grid;
-    grid-template-columns:52px 1fr;
-    gap:12px;
-    padding:16px 0;
+    padding:14px 0;
   }
-  @media(min-width:640px){ .stop{ grid-template-columns:76px 1fr; gap:18px; } }
 
   .stop-time{
     font-family:'Space Mono', monospace;
-    font-size:13px;
+    font-size:12px;
     color:var(--red);
     font-weight:700;
-    padding-top:4px;
-    text-align:right;
-    position:relative;
-    line-height:1.35;
-    word-break:keep-all;
-    overflow-wrap:break-word;
+    text-align:center;
+    letter-spacing:.06em;
+    margin-bottom:16px;
+    display:flex;
+    justify-content:center;
+  }
+  .stop-time span{
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    padding:5px 16px;
+    border-radius:20px;
   }
   .stop-card{
     background:var(--card);
@@ -305,9 +306,6 @@
     .route-line{ flex:none; width:100%; height:34px; margin:4px 0; }
     .route-stop{ min-width:0; }
 
-    .stop{ grid-template-columns:48px 1fr; gap:10px; }
-    .stop-time{ font-size:10.5px; white-space:normal; word-break:break-word; line-height:1.4; }
-
     .stop-card{ padding:18px 16px; }
     .stop-card h3{ font-size:18px; }
 
@@ -372,8 +370,8 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">06:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>06:00</span></div>
       <h3>Chegada à Estación Sur</h3>
       <p class="stop-note">Comprar já o passe de 24 horas e apanhar o metro até Sol.</p>
       <div class="tag-row"><span class="tag">🚇 passe 24h</span><span class="tag">metro → Sol</span></div>
@@ -381,8 +379,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">07:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>07:00</span></div>
       <h3>Deixar as malas</h3>
       <p class="stop-note">Como o check-in só é às 15:00, o melhor é deixar as malas junto ao alojamento, num ponto de lockers. Decidir no momento o sítio ou marcar previamente nestes sites indicados em abaixo: </p>
       <ul>
@@ -394,8 +392,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">07:15</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>07:15</span></div>
       <h3>Pequeno-almoço perto da Sol</h3>
       <ul>
         <li>Mercadona</li>
@@ -405,8 +403,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">08:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>08:00</span></div>
       <h3>Centro histórico</h3>
       <div class="poi-chain">
         <span>1 · Puerta del Sol</span>
@@ -429,8 +427,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">12:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>12:30</span></div>
       <h3>Almoço rápido no Mercadona</h3>
       <p class="stop-note">Calle Montera, a poucos minutos da Gran Vía e do alojamento - (almoço rápido e barato).</p>
       <div class="tag-row">
@@ -441,16 +439,16 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">15:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>15:00</span></div>
       <h3>Check-in</h3>
       <p class="stop-note">Ir buscar as malas, fazer o check-in e descansar cerca de 30 minutos antes de voltar à rua.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">16:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>16:00</span></div>
       <h3>Centro moderno</h3>
       <div class="poi-chain">
         <span>9 · Gran Vía</span>
@@ -471,8 +469,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">19:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>19:00</span></div>
       <h3>Santiago Bernabéu</h3>
       <p class="stop-note">Exterior, loja oficial e, se fizerem, o tour ao estádio.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%20Stadium%20-%20Exterior%2002.JPG?width=900" alt="Estádio Santiago Bernabéu, Madrid" loading="lazy" decoding="async"></div>
@@ -480,16 +478,16 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">20:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>20:30</span></div>
       <h3>Regresso ao alojamento</h3>
       <p class="stop-note">Banho e troca de roupa antes do jantar.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">21:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>21:30</span></div>
       <h3>Jantar — Lateral Fuencarral</h3>
       <p class="stop-note">Excelente ambiente, muito perto da Gran Vía e já ficam na melhor zona para sair depois.Também podemos cozinhar e, depois, no regresso a Madrid, se sobrar dinheiro, jantamos neste sítio.</p>
     </div>
@@ -531,31 +529,31 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">08:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>08:30</span></div>
       <h3>Pequeno-almoço</h3>
       <p class="stop-note"> Tomar em casa ou, se quisermos, ir à Chocolatería San Ginés.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">09:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>09:30</span></div>
       <h3>Último passeio</h3>
       <p class="stop-note">Passeio final pela Sol ou pela Gran Vía. Depois vemos que zona queremos ver melhor consoante o dia anterior. )</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">10:20</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>10:20</span></div>
       <h3>Check-out</h3>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">10:35</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>10:35</span></div>
       <h3>Metro para Madrid Atocha</h3>
       <p class="stop-note">Apanha-se o comboio para Alicante.</p>
     </div>
@@ -591,23 +589,23 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">13:31</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>13:31</span></div>
       <h3>Chegada ao Terminal de Alicante</h3>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">13:30/14:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>13:30/14:00</span></div>
       <h3>Check-in no alojamento</h3>
       <p class="stop-note"> Ir diretamente para o alojamento deixar as malas e preparar a tarde.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">15:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>15:00</span></div>
       <h3>Conhecer Alicante a pé</h3>
       <div class="poi-chain">
         <span>1 · Barrio de Santa Cruz ⭐</span>
@@ -625,8 +623,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">final do dia</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>final do dia</span></div>
       <h3>Mercadona para compras</h3>
       <div class="tag-row">
         <span class="tag">pequenos-almoços</span><span class="tag">águas</span><span class="tag">fruta</span>
@@ -648,16 +646,16 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">08:30/09:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>08:30/09:00</span></div>
       <h3>Alugar carro e saída para Benidorm</h3>
       <p class="stop-note">🚗 Alicante → Benidorm: cerca de 45 minutos.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">manhã</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>manhã</span></div>
       <h3>Benidorm</h3>
       <div class="poi-chain">
         <span>1 · Centro histórico</span>
@@ -676,16 +674,16 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">13:30/14:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>13:30/14:00</span></div>
       <h3>Regresso a Alicante</h3>
       <p class="stop-note">Levar sandes para comer pelo caminho ou já na praia.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">tarde</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>tarde</span></div>
       <h3>Playa de San Juan</h3>
       <p class="stop-note"> Praia que tem os postos de nadador salvador semelhante a Miami.</p>
       <div class="stop-photo"><img src="https://x.cdrst.com/zona/mr2/fotos/playa_de_san_juan/playa_de_san_juan_c6e0ad75d438cceb1fa6da01a63e88bc.jpg" alt="Playa de San Juan, Alicante" loading="lazy" decoding="async"></div>
@@ -703,16 +701,16 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">08:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>08:00</span></div>
       <h3>Saída de Alicante</h3>
       <p class="stop-note">🚗 Cerca de 1h15/1h30 até à Cala Granadella.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">09:30–13:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>09:30–13:00</span></div>
       <h3>Cala Granadella ⭐⭐⭐</h3>
       <p class="stop-note">Chegar cedo. Nadar, aproveitar a água transparente, fotos:)</p>
       <div class="tag-row"><span class="tag">sandes</span><span class="tag">muita água</span><span class="tag">protetor solar</span></div>
@@ -721,16 +719,16 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">13:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>13:00</span></div>
       <h3>Deslocação</h3>
       <p class="stop-note">🚗 Cala Granadella → Cala El Portet: cerca de 25–35 minutos.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">14:00–17:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>14:00–17:30</span></div>
       <h3>Cala El Portet</h3>
       <p class="stop-note">Baía abrigada de água turquesa, uma das mais bonitas da Costa Blanca.</p>
       <div class="stop-photo"><img src="https://www.bindleyproperties.com/objetos/temp/source/bindley/bindleyproperties-noticias_67b0814ca43d5-source.jpeg" loading="lazy" decoding="async"></div>
@@ -739,8 +737,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">18:00/18:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>18:00/18:30</span></div>
       <h3>Regresso a Alicante</h3>
     </div>
   </div>
@@ -756,8 +754,8 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">09:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>09:30</span></div>
       <h3>Castelo de Santa Bárbara ⭐⭐⭐</h3>
       <p class="stop-note">O grande ponto turístico de Alicante. Ver: muralhas, vistas sobre a cidade, porto, praias.</p>
       <div class="tag-row"><span class="tag">⏱️ 1h30–2h</span></div>
@@ -766,8 +764,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">depois</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>depois</span></div>
       <h3>Últimos pontos</h3>
       <p class="stop-note">Casa Carbonell — edifício histórico junto à Explanada — e um passeio final pelo porto e marina.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20Carbonell%2C%20Alicante.jpg?width=900" alt="Casa Carbonell, Alicante" loading="lazy" decoding="async"></div>
@@ -776,8 +774,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">12:45/13:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>12:45/13:00</span></div>
       <h3>Voltar ao alojamento</h3>
       <p class="stop-note">Buscar as malas e seguir para a estação.</p>
     </div>
@@ -813,16 +811,16 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">17:09</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>17:09</span></div>
       <h3>Chegada a Valência</h3>
       <p class="stop-note">🚆 Estação: Valencia-Joaquín Sorolla.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">18:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>18:00</span></div>
       <h3>Ir para o alojamento</h3>
       <p class="stop-note">Como são 5 pessoas com malas, a opção mais prática é 🚕 táxi/Uber: 10–15 min, cerca de 10–15 € no total (2–3 € cada).</p>
       <p class="stop-note" style="margin-top:12px;">Check-in: 📍 C/ de Tirant lo Blanch, 9</p>
@@ -830,8 +828,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">18:15/18:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>18:15/18:30</span></div>
       <h3>Compras no Mercadona</h3>
       <p class="stop-note">A pé ou pequeno trajeto de autocarro, dependendo do supermercado escolhido.</p>
       <div class="tag-row"><span class="tag">pequenos-almoços</span><span class="tag">águas</span><span class="tag">comida para praia</span><span class="tag">refeições</span></div>
@@ -839,8 +837,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">20:30/21:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>20:30/21:00</span></div>
       <h3>Ruzafa</h3>
       <p class="stop-note">Alojamento → Ruzafa: 🚶 a pé (25–30 min), 🚌 autocarro, ou 🚕 Uber (6–10 €). Com 5 pessoas cansadas, o Uber compensa.</p>
       <p class="stop-note" style="margin-top:12px;">Jantar no FINCA Bar de Barra, em Ruzafa.</p>
@@ -848,8 +846,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">noite</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>noite</span></div>
       <h3>Passeio noturno pelo centro iluminado</h3>
       <p class="stop-note">A pé: Ruzafa → Estación del Norte → Plaza de Toros de Valencia → Plaça de l'Ajuntament. Muito bonito à noite.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900" alt="Plaça de l'Ajuntament, Valência, à noite" loading="lazy" decoding="async"></div>
@@ -857,8 +855,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">00:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>00:00</span></div>
       <h3>L'Umbracle / MYA</h3>
       <p class="stop-note">Centro → Cidade das Artes: 🚕 Uber, 8–12 € (cerca de 2 € cada, divididos por 5). Não se recomenda ir a pé de noite.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Umbr%C3%A1culo%2C%20Ciudad%20de%20las%20Artes%20y%20las%20Ciencias%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-29%2C%20DD%2043.JPG?width=900" alt="L'Umbracle, Ciudad de las Artes y las Ciencias, Valência" loading="lazy" decoding="async"></div>
@@ -877,16 +875,16 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">09:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>09:30</span></div>
       <h3>Saída para o centro histórico</h3>
       <p class="stop-note">🚌 Autocarro (~20 min, usar SUMA) ou 🚕 Uber (8–10 €, dividido por 5 fica aceitável). Comprar 1 cartão SUMA 10.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">manhã</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>manhã</span></div>
       <h3>Percurso a pé no centro</h3>
       <div class="poi-chain">
         <span>1 · Mercado Central</span>
@@ -908,24 +906,24 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">13:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>13:00</span></div>
       <h3>Rooftop no Atenea Sky</h3>
       <p class="stop-note">Bebida e vista da cidade. Não ficar muito tempo — a tarde ainda vai longa.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">14:00</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>14:00</span></div>
       <h3>Voltar ao alojamento</h3>
       <p class="stop-note">🚌 Autocarro ou 🚕 Uber (5 pessoas divididas, fica barato). Almoço leve — sandes e comida do Mercadona — e descanso.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">15:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>15:30</span></div>
       <h3>Cidade das Artes e das Ciências</h3>
       <p class="stop-note">🚶 10–15 minutos a pé do alojamento — aqui é onde ele é perfeito.</p>
       <div class="poi-chain">
@@ -943,8 +941,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">17:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>17:30</span></div>
       <h3>Playa de la Malvarrosa</h3>
       <p class="stop-note">🚌 Cidade das Artes → Malvarrosa: 20–30 minutos. Levar toalhas, comida e água. Ficar até ao pôr do sol.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atardecer%20en%20la%20Playa%20Malvarrosa.jpg?width=900" alt="Pôr do sol na Playa de la Malvarrosa, Valência" loading="lazy" decoding="async"></div>
@@ -952,8 +950,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">noite</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>noite</span></div>
       <h3>Marina de València</h3>
       <p class="stop-note">Passeio: Malvarrosa → Marina. Ambiente de luzes, barcos, bares e esplanadas.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Veles%20e%20Vents.jpg?width=900" alt="Marina de València, edifício Veles e Vents" loading="lazy" decoding="async"></div>
@@ -972,8 +970,8 @@
 <div class="timeline">
 
   <div class="stop">
-    <div class="stop-time mono">manhã</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>manhã</span></div>
       <h3>El Carmen</h3>
       <p class="stop-note">Check-out e malas deixadas no alojamento. Ruas antigas, arte urbana, Torres de Serranos e Torres de Quart.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Cuart%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%2093.JPG?width=900" alt="Torres de Quart, Valência" loading="lazy" decoding="async"></div>
@@ -981,8 +979,8 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">almoço</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>almoço</span></div>
       <h3>Mercado de Colón</h3>
       <p class="stop-note">Passear e tomar algo.</p>
       <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercado%20de%20Col%C3%B3n%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20165.JPG?width=900" alt="Mercado de Colón, Valência" loading="lazy" decoding="async"></div>
@@ -990,16 +988,16 @@
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">15:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>15:30</span></div>
       <h3>Voltar ao alojamento</h3>
       <p class="stop-note">Buscar as malas.</p>
     </div>
   </div>
 
   <div class="stop">
-    <div class="stop-time mono">16:30</div>
     <div class="stop-card">
+      <div class="stop-time mono"><span>16:30</span></div>
       <h3>Ir para a estação</h3>
       <p class="stop-note">Valencia-Joaquín Sorolla Station. Com malas: 🚕 Uber/táxi, cerca de 10 min, 8–12 €.</p>
     </div>
