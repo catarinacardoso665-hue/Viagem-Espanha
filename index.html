@@ -359,10 +359,14 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .stop{
   position:relative;
   margin-bottom:26px;
+  opacity:1;
+  transform:none;
+}
+html.js-reveal .stop{
   opacity:0; transform:translateY(26px);
   transition:opacity .7s cubic-bezier(.16,.9,.28,1), transform .7s cubic-bezier(.16,.9,.28,1);
 }
-.stop.in-view{ opacity:1; transform:translateY(0); }
+html.js-reveal .stop.in-view{ opacity:1; transform:translateY(0); }
 .stop-card{
   background:var(--card);
   backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
@@ -1342,17 +1346,23 @@ function updateProgress(){
   setInterval(tick, 30000);
 })();
 
-// ============ Reveal on scroll ============
+// ============ Reveal on scroll (progressive enhancement) ============
+// Only enable the fade-in effect if JS actually runs; otherwise content stays fully visible.
+document.documentElement.classList.add('js-reveal');
 const revealEls = document.querySelectorAll('.stop, .night-card, .weather-card, .checklist-card');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('in-view');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
-revealEls.forEach(el => io.observe(el));
+if('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in-view'));
+}
 
 // ============ Interactive map ============
 const mapButtons = document.querySelectorAll('.map-select-btn');
