@@ -3,1031 +3,1400 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Porto → Madrid · Roteiro da viagem</title>
+<title>Girls Trip · Madrid · Alicante · València — Summer 2026</title>
+<meta name="description" content="Roteiro de viagem premium — Madrid, Alicante e Valência, verão de 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#F4EBDA;
-    --paper-deep:#ECE0C8;
-    --card:#FBF6EA;
-    --ink:#25304A;
-    --ink-soft:#4E5871;
-    --red:#A32638;
-    --red-deep:#7C1C2A;
-    --gold:#C9922E;
-    --gold-soft:#E7C87C;
-    --tile:#2E6488;
-    --tile-deep:#1F4A66;
-    --night:#1F2E3A;
-    --night-card:#28394A;
-    --line:#D8C6A0;
-    --radius:16px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background-image:radial-gradient(var(--line) 1px, transparent 1px);
-    background-size:22px 22px;
-    opacity:.35;
-    pointer-events:none;
-    z-index:0;
-  }
-  h1,h2,h3,.display{ font-family:'Fraunces', serif; color:var(--ink); }
-  .mono{ font-family:'Space Mono', monospace; }
-  a{ color:inherit; }
-  img{ display:block; width:100%; height:100%; object-fit:cover; }
+/* =========================================================
+   GIRLS TRIP · MADRID · ALICANTE · VALÈNCIA — SUMMER 2026
+   Luxury Girls Trip Planner — design system
+   ========================================================= */
 
-  .wrap{ max-width:920px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:80px 24px 60px;
-    overflow:hidden;
-    z-index:1;
-  }
-  .hero-inner{ max-width:920px; margin:0 auto; }
-  .eyebrow{
-    font-family:'Space Mono', monospace;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    font-size:12px;
-    color:var(--red);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .eyebrow::before{ content:""; width:28px; height:1px; background:var(--red); display:inline-block; }
-  h1.title{
-    font-size:clamp(40px, 7vw, 76px);
-    font-weight:600;
-    line-height:1.02;
-    margin:18px 0 6px;
-    letter-spacing:-0.01em;
-  }
-  h1.title em{ font-style:italic; font-weight:500; color:var(--red); }
-  .subtitle{
-    font-size:18px;
-    color:var(--ink-soft);
-    max-width:520px;
-    margin-top:14px;
-  }
+:root{
+  --bg:#FFF8FB;
+  --bg-secondary:#FBE9EF;
+  --card:rgba(255,255,255,.82);
+  --card-solid:#FFFDFC;
+  --pink:#C85B83;
+  --pink-dark:#A43E67;
+  --pink-soft:#F6D2DF;
+  --text:#46353D;
+  --text-soft:#7D6A73;
+  --gold:#D8B36A;
+  --gold-soft:#EFDCB3;
+  --border:#F2C6D5;
+  --night:#3B1E30;
+  --night-card:#4A2740;
+  --night-border:#6B3D57;
+  --radius:28px;
+  --radius-sm:18px;
+  --shadow-soft:0 20px 45px -20px rgba(164,62,103,.28);
+  --shadow-card:0 12px 34px -14px rgba(164,62,103,.22);
+  --shadow-hover:0 26px 55px -18px rgba(164,62,103,.38);
+  --serif:'Fraunces', serif;
+  --sans:'Poppins', sans-serif;
+}
 
-  /* hero closing photo banner */
-  .hero-photo{
-    margin-top:56px;
-    width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-    height:min(60vh, 520px);
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-photo::after{
-    content:"";
-    position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(37,48,74,0) 55%, var(--paper) 100%);
-  }
-  .hero-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 25%; }
-  @media(max-width:640px){
-    .hero-photo{ height:340px; margin-top:36px; }
-  }
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
 
-  /* route ticket */
-  .route{
-    margin-top:48px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:28px 30px;
-    display:flex;
-    align-items:center;
-    gap:24px;
-    flex-wrap:wrap;
-    position:relative;
-  }
-  .route::before, .route::after{
-    content:"";
-    position:absolute;
-    width:22px; height:22px;
-    background:var(--paper);
-    border-radius:50%;
-    top:50%; transform:translateY(-50%);
-  }
-  .route::before{ left:-11px; }
-  .route::after{ right:-11px; }
-  .route-stop{ text-align:center; min-width:96px; }
-  .route-stop .city{ font-family:'Fraunces', serif; font-size:22px; font-weight:600; }
-  .route-stop .time{ font-family:'Space Mono', monospace; font-size:13px; color:var(--red); margin-top:4px; }
-  .route-stop .date{ font-size:12px; color:var(--ink-soft); margin-top:2px; }
-  .route-line{
-    flex:1;
-    min-width:140px;
-    position:relative;
-    height:2px;
-    background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 14px);
-  }
-  .route-line .bus{
-    position:absolute; top:50%; left:14%;
-    transform:translateY(-50%);
-    font-size:20px;
-    animation:drive 5s linear infinite;
-  }
-  @keyframes drive{ 0%{ left:0%; } 100%{ left:96%; } }
-  .route-meta{
-    font-family:'Space Mono', monospace;
-    font-size:12px;
-    color:var(--ink-soft);
-    text-align:center;
-    width:100%;
-    margin-top:6px;
-  }
+/* ---------- Ambient background ---------- */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background:
+    radial-gradient(ellipse 900px 500px at 8% 4%, rgba(246,210,223,.55), transparent 60%),
+    radial-gradient(ellipse 800px 600px at 95% 18%, rgba(216,179,106,.16), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 15% 75%, rgba(200,91,131,.10), transparent 60%),
+    radial-gradient(circle at 50% 50%, var(--bg), var(--bg));
+  z-index:0;
+  pointer-events:none;
+}
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  background-image:radial-gradient(rgba(164,62,103,.14) 1px, transparent 1.4px);
+  background-size:26px 26px;
+  opacity:.5;
+  z-index:0;
+  pointer-events:none;
+}
 
-  .stat-row{
-    margin-top:28px;
-    display:flex; gap:28px; flex-wrap:wrap;
-  }
-  .stat{ font-family:'Space Mono', monospace; }
-  .stat .n{ font-size:26px; color:var(--red); font-weight:700; }
-  .stat .l{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); }
+a{ color:inherit; text-decoration:none; }
+img{ display:block; width:100%; height:100%; object-fit:cover; }
+.wrap{ max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
+h1,h2,h3,h4{ font-family:var(--serif); color:var(--text); font-weight:600; }
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:12px;
+  color:var(--pink-dark);
+  display:inline-flex; align-items:center; gap:8px;
+}
 
-  /* ---------- SECTION HEADERS ---------- */
-  .day-header{
-    max-width:920px; margin:100px auto 8px; padding:0 24px;
-    position:relative; z-index:1;
-  }
-  .day-tag{
-    font-family:'Space Mono', monospace;
-    font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--card); background:var(--red);
-    display:inline-block; padding:6px 14px; border-radius:20px;
-  }
-  .day-header h2{ font-size:clamp(30px,5vw,46px); margin-top:16px; }
-  .day-header .day-sub{ color:var(--ink-soft); margin-top:6px; max-width:560px; }
+::selection{ background:var(--pink-soft); color:var(--pink-dark); }
 
-  /* ---------- TIMELINE ---------- */
-  .timeline{
-    max-width:920px; margin:0 auto; padding:40px 24px 0;
-    position:relative; z-index:1;
-  }
-  .stop{
-    position:relative;
-    padding:14px 0;
-  }
+/* focus visibility for a11y */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--pink-dark); outline-offset:3px; border-radius:6px;
+}
 
-  .stop-time{
-    font-family:'Space Mono', monospace;
-    font-size:12px;
-    color:var(--red);
-    font-weight:700;
-    text-align:center;
-    letter-spacing:.06em;
-    margin-bottom:16px;
-    display:flex;
-    justify-content:center;
-  }
-  .stop-time span{
-    background:var(--paper-deep);
-    border:1px solid var(--line);
-    padding:5px 16px;
-    border-radius:20px;
-  }
-  .stop-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px 24px;
-  }
-  .stop-card h3{ font-size:20px; font-weight:600; }
-  .stop-card .stop-note{ margin-top:8px; color:var(--ink-soft); font-size:15px; }
-  .stop-card ul{ margin:10px 0 0 18px; color:var(--ink-soft); font-size:15px; }
-  .stop-card li{ margin-bottom:3px; }
-  .stop-photo{
-    margin-top:14px;
-    border-radius:12px;
-    overflow:hidden;
-    height:210px;
-    background:var(--paper-deep);
-  }
-  .stop-photo img{ transition:transform .5s ease; }
-  .stop-photo:hover img{ transform:scale(1.05); }
-  .stop-photo figcaption{ display:none; }
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
 
-  .tip{
-    margin-top:14px;
-    background:var(--gold-soft);
-    border-left:3px solid var(--gold);
-    border-radius:0 10px 10px 0;
-    padding:12px 16px;
-    font-size:14px;
-    color:#5B440F;
-  }
-  .tip b{ color:var(--red-deep); }
+/* ---------- Scroll progress bar ---------- */
+.progress-bar{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:linear-gradient(90deg, var(--gold), var(--pink), var(--pink-dark));
+  z-index:9999;
+  transition:width .08s linear;
+}
 
-  .poi-chain{
-    margin-top:10px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
+/* ---------- Navbar ---------- */
+.navbar{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:16px 0;
+  transition:padding .35s ease, background .35s ease, box-shadow .35s ease;
+}
+.navbar.scrolled{
+  padding:10px 0;
+  background:rgba(255,248,251,.72);
+  backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 8px 30px -18px rgba(164,62,103,.35);
+  border-bottom:1px solid var(--border);
+}
+.navbar .wrap{ display:flex; align-items:center; justify-content:space-between; }
+.nav-brand{
+  font-family:var(--serif); font-style:italic; font-weight:600; font-size:20px;
+  color:var(--pink-dark); display:flex; align-items:center; gap:6px;
+}
+.nav-links{ display:flex; align-items:center; gap:6px; list-style:none; }
+.nav-links a{
+  font-size:13.5px; font-weight:500; padding:9px 18px; border-radius:999px;
+  color:var(--text); transition:background .25s ease, color .25s ease, transform .2s ease;
+  white-space:nowrap;
+}
+.nav-links a:hover{ background:var(--pink-soft); color:var(--pink-dark); transform:translateY(-1px); }
+.nav-toggle{
+  display:none; background:var(--card); border:1px solid var(--border); border-radius:14px;
+  width:42px; height:42px; align-items:center; justify-content:center; font-size:18px; cursor:pointer;
+}
+@media(max-width:900px){
+  .nav-links{
+    position:fixed; top:64px; right:16px; left:16px;
+    background:rgba(255,253,252,.97); backdrop-filter:blur(20px);
+    border:1px solid var(--border); border-radius:22px;
+    flex-direction:column; align-items:stretch; gap:2px; padding:12px;
+    box-shadow:var(--shadow-soft);
+    transform:translateY(-14px); opacity:0; visibility:hidden; pointer-events:none;
+    transition:all .3s ease;
   }
-  .poi-chain span{
-    font-family:'Space Mono', monospace;
-    font-size:12px;
-    background:var(--tile);
-    color:#EAF3FA;
-    padding:4px 10px;
-    border-radius:20px;
-  }
+  .nav-links.open{ transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; }
+  .nav-links a{ text-align:center; padding:12px; }
+  .nav-toggle{ display:flex; }
+}
 
-  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-  .tag{
-    font-size:12px;
-    font-family:'Space Mono', monospace;
-    border:1px solid var(--line);
-    padding:4px 10px;
-    border-radius:20px;
-    color:var(--ink-soft);
-  }
+/* ---------- Stickers ---------- */
+.sticker{
+  position:absolute; font-size:22px; opacity:.85; user-select:none; pointer-events:none;
+  animation:sway 6s ease-in-out infinite;
+  filter:drop-shadow(0 6px 10px rgba(164,62,103,.18));
+}
+.sticker.s2{ animation-delay:-1.4s; animation-duration:7s; }
+.sticker.s3{ animation-delay:-3s; animation-duration:5.4s; }
+.sticker.s4{ animation-delay:-2s; animation-duration:6.6s; }
+@keyframes sway{
+  0%,100%{ transform:rotate(-6deg) translateY(0); }
+  50%{ transform:rotate(6deg) translateY(-8px); }
+}
 
-  /* ---------- NIGHT SECTION ---------- */
-  .night-section{
-    background:var(--night);
-    color:#EDE6D6;
-    margin-top:110px;
-    padding:70px 24px;
-    position:relative;
-    z-index:1;
-  }
-  .night-section .wrap{ position:relative; }
-  .night-section h2{ color:#F6EFDD; }
-  .night-section .day-tag{ background:var(--gold); color:#3A2A05; }
-  .night-grid{
-    margin-top:36px;
-    display:grid;
-    gap:18px;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  }
-  .night-card{
-    background:var(--night-card);
-    border-radius:var(--radius);
-    padding:22px;
-    border:1px solid #38495A;
-  }
-  .night-card h4{ font-family:'Fraunces', serif; font-size:19px; color:#F6EFDD; }
-  .night-card p{ margin-top:8px; font-size:14px; color:#C7CDD6; }
-  .night-card .dist{ margin-top:12px; font-family:'Space Mono', monospace; font-size:12px; color:var(--gold-soft); }
-  .stroll{ margin-top:30px; font-size:15px; color:#C7CDD6; }
-  .stroll b{ color:#F6EFDD; }
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  padding:140px 24px 80px;
+}
+.hero-bg{
+  position:absolute; inset:0; z-index:0;
+  background:linear-gradient(160deg, var(--pink-dark), var(--pink));
+}
+.hero-bg img{ width:100%; height:100%; object-fit:cover; }
+.hero-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(164,62,103,.55) 0%, rgba(200,91,131,.55) 45%, rgba(255,248,251,.96) 100%),
+    linear-gradient(120deg, rgba(168,63,103,.35), rgba(216,179,106,.18));
+}
+.hero-content{
+  position:relative; z-index:2; text-align:center; max-width:820px; margin:0 auto;
+  animation:heroIn 1.1s cubic-bezier(.16,.9,.28,1) both;
+}
+@keyframes heroIn{ from{ opacity:0; transform:translateY(28px); } to{ opacity:1; transform:translateY(0); } }
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(255,255,255,.28);
+  border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  font-family:var(--sans); font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  font-size:12.5px; padding:9px 20px; border-radius:999px;
+}
+.hero h1{
+  color:#fff;
+  font-size:clamp(56px, 11vw, 128px);
+  line-height:.98;
+  margin:26px 0 10px;
+  text-shadow:0 8px 40px rgba(74,20,45,.35);
+  letter-spacing:-.01em;
+}
+.hero h1 em{ font-style:italic; font-weight:500; }
+.hero .cities{
+  display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+  margin-top:14px;
+}
+.hero .cities span{
+  font-family:var(--serif); font-style:italic; font-size:clamp(20px,3vw,30px);
+  color:#fff;
+}
+.hero .cities .dot{ color:var(--gold-soft); font-size:20px; }
+.hero .tagline{
+  margin-top:26px; color:rgba(255,255,255,.92); font-size:16.5px; max-width:480px; margin-inline:auto;
+}
+.scroll-cue{
+  position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+  color:#fff; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2;
+  animation:bounce 2.2s ease-in-out infinite;
+}
+.scroll-cue span{ width:1px; height:34px; background:rgba(255,255,255,.7); }
+@keyframes bounce{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,8px);} }
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    max-width:920px; margin:0 auto; padding:70px 24px 60px;
-    position:relative; z-index:1;
-    color:var(--ink-soft);
-    font-size:14px;
-    text-align:center;
-  }
-  footer .sig{ font-family:'Fraunces', serif; font-style:italic; font-size:20px; color:var(--red); margin-bottom:10px; }
+/* ---------- Stats / trip ticket / countdown ---------- */
+.stats-strip{
+  max-width:1180px; margin:-64px auto 0; padding:0 28px; position:relative; z-index:5;
+}
+.stats-card{
+  background:var(--card);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  padding:34px 38px;
+  display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between;
+}
+.stat-block{ text-align:center; flex:1; min-width:120px; }
+.stat-block .n{ font-family:var(--serif); font-size:34px; color:var(--pink-dark); font-weight:700; }
+.stat-block .l{ font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-soft); margin-top:4px; }
+.stats-divider{ width:1px; height:44px; background:var(--border); }
+.countdown-block{ text-align:center; flex:1.4; min-width:220px; }
+.countdown-block .l{ font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--text-soft); margin-bottom:8px; }
+.countdown-nums{ display:flex; gap:10px; justify-content:center; }
+.countdown-nums div{
+  background:var(--pink-soft); border-radius:14px; padding:8px 12px; min-width:56px;
+}
+.countdown-nums .num{ font-family:var(--serif); font-size:22px; color:var(--pink-dark); font-weight:700; }
+.countdown-nums .lab{ font-size:9.5px; text-transform:uppercase; color:var(--text-soft); letter-spacing:.06em; }
+@media(max-width:640px){
+  .stats-strip{ margin-top:-40px; }
+  .stats-card{ padding:24px 20px; gap:18px; }
+  .stats-divider{ display:none; }
+}
 
-  @media(max-width:640px){
-    .route{ flex-direction:column; align-items:stretch; }
-    .route::before, .route::after{ display:none; }
-    .route-line{ flex:none; width:100%; height:34px; margin:4px 0; }
-    .route-stop{ min-width:0; }
+/* ---------- Section divider ---------- */
+.ornament{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  margin:8px auto; color:var(--gold); font-size:15px;
+  max-width:1180px; padding:0 28px;
+}
+.ornament::before, .ornament::after{
+  content:""; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, var(--border) 50%, transparent);
+}
 
-    .stop-card{ padding:18px 16px; }
-    .stop-card h3{ font-size:18px; }
+/* ---------- Quote card ---------- */
+.quote-block{ max-width:760px; margin:70px auto; padding:0 28px; text-align:center; position:relative; z-index:2; }
+.quote-block p{
+  font-family:var(--serif); font-style:italic; font-weight:500;
+  font-size:clamp(20px,3vw,28px); color:var(--pink-dark); line-height:1.5;
+}
+.quote-block .quote-mark{ font-size:44px; color:var(--gold); line-height:0; display:block; margin-bottom:6px; font-family:var(--serif); }
 
-    .day-header, .timeline, footer, .transfer{ padding-left:16px; padding-right:16px; }
-    .hero{ padding:60px 16px 44px; }
+/* ---------- Route / transfer ticket ---------- */
+.ticket-wrap{ max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
+.ticket{
+  background:var(--card);
+  backdrop-filter:blur(20px) saturate(160%); -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid var(--border);
+  border-radius:26px;
+  box-shadow:var(--shadow-card);
+  padding:30px 36px;
+  position:relative;
+  display:flex; align-items:center; gap:26px; flex-wrap:wrap;
+}
+.ticket::before, .ticket::after{
+  content:""; position:absolute; width:26px; height:26px; background:var(--bg);
+  border:1px solid var(--border); border-radius:50%; top:50%; transform:translateY(-50%);
+}
+.ticket::before{ left:-13px; } .ticket::after{ right:-13px; }
+.ticket-stop{ text-align:center; min-width:110px; }
+.ticket-stop .city{ font-family:var(--serif); font-size:23px; font-weight:600; }
+.ticket-stop .time{ font-family:var(--sans); font-weight:600; font-size:14px; color:var(--pink-dark); margin-top:5px; }
+.ticket-stop .date{ font-size:12px; color:var(--text-soft); margin-top:2px; }
+.ticket-line{
+  flex:1; min-width:150px; position:relative; height:2px;
+  background:repeating-linear-gradient(90deg, var(--border) 0 9px, transparent 9px 16px);
+  display:flex; align-items:center; justify-content:center;
+}
+.ticket-line .icon{
+  background:var(--bg); font-size:20px; padding:0 6px;
+  animation:drive 4s ease-in-out infinite;
+  position:relative;
+}
+@keyframes drive{ 0%,100%{ transform:translateX(-30px);} 50%{ transform:translateX(30px);} }
+.ticket-meta{
+  width:100%; text-align:center; font-size:12.5px; color:var(--text-soft);
+  margin-top:8px; font-weight:500; letter-spacing:.02em;
+}
+.transfer-block{ max-width:1180px; margin:90px auto 0; padding:0 28px; position:relative; z-index:2; }
+.transfer-tag{
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(120deg, var(--gold), var(--gold-soft));
+  color:#5B430F; font-weight:600; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+  padding:8px 18px; border-radius:999px; box-shadow:0 8px 20px -10px rgba(216,179,106,.6);
+}
+.transfer-block h2{ font-size:clamp(24px,4vw,34px); margin:16px 0 22px; }
 
-    .night-section{ padding:50px 16px; }
-  }
+/* ---------- Day header (ribbon) ---------- */
+.day-header{
+  max-width:1180px; margin:130px auto 34px; padding:0 28px; position:relative; z-index:2;
+}
+.day-ribbon{
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--pink-dark); color:#fff;
+  font-weight:600; font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+  padding:9px 22px 9px 18px; border-radius:6px 16px 16px 6px;
+  box-shadow:0 10px 24px -12px rgba(164,62,103,.55);
+  position:relative;
+}
+.day-ribbon::after{
+  content:""; position:absolute; right:-11px; top:0; border-style:solid;
+  border-width:19px 0 19px 11px; border-color:transparent transparent transparent var(--pink-dark);
+}
+.day-header h2{ font-size:clamp(32px,5vw,50px); margin-top:20px; max-width:760px; }
+.day-header .day-sub{ color:var(--text-soft); margin-top:10px; max-width:600px; font-size:15.5px; }
+.day-header-row{ display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.map-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--card); border:1px solid var(--border); color:var(--pink-dark);
+  font-weight:600; font-size:13px; padding:11px 20px; border-radius:999px;
+  box-shadow:var(--shadow-card); transition:all .25s ease; white-space:nowrap;
+}
+.map-btn:hover{ background:var(--pink-dark); color:#fff; transform:translateY(-2px); box-shadow:var(--shadow-hover); }
 
-  html, body{ overflow-x:hidden; max-width:100%; }
+/* ---------- Timeline ---------- */
+.timeline{ max-width:1180px; margin:0 auto; padding:10px 28px 0; position:relative; z-index:2; }
+.stop{
+  position:relative;
+  margin-bottom:26px;
+  opacity:0; transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.16,.9,.28,1), transform .7s cubic-bezier(.16,.9,.28,1);
+}
+.stop.in-view{ opacity:1; transform:translateY(0); }
+.stop-card{
+  background:var(--card);
+  backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:38px 34px 30px;
+  box-shadow:var(--shadow-card);
+  position:relative;
+  transition:transform .4s cubic-bezier(.2,.8,.3,1), box-shadow .4s ease;
+}
+.stop-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-hover); }
+.stop-time{
+  position:absolute; top:-18px; left:34px;
+  background:linear-gradient(135deg, var(--pink), var(--pink-dark));
+  color:#fff; font-weight:600; font-size:12.5px; letter-spacing:.03em;
+  padding:9px 20px; border-radius:999px;
+  box-shadow:0 10px 22px -8px rgba(164,62,103,.55);
+  display:inline-flex; align-items:center; gap:6px;
+}
+.stop-time::before{ content:"○"; font-size:9px; }
+.stop-card h3{
+  font-size:clamp(19px,2.4vw,23px); margin-top:12px; display:flex; align-items:center; gap:10px;
+}
+.stop-card .stop-icon{ font-size:20px; }
+.stop-note{ margin-top:12px; color:var(--text-soft); font-size:15px; }
+.stop-note + .stop-note{ margin-top:8px; }
 
-  /* ---------- TRANSFER (leg change, shown between cities) ---------- */
-  .transfer{
-    max-width:920px; margin:90px auto 0; padding:0 24px;
-    position:relative; z-index:1;
-  }
-  .transfer .day-tag{ background:var(--tile); }
-  .transfer h2{ font-size:clamp(26px,4.4vw,38px); margin-top:16px; }
-  .transfer .route{ margin-top:28px; }
+.chip-row{ display:flex; flex-wrap:wrap; gap:9px; margin-top:14px; }
+.chip{
+  font-size:12.5px; font-weight:500; padding:7px 15px; border-radius:999px;
+  background:var(--pink-soft); color:var(--pink-dark); border:1px solid var(--border);
+  transition:transform .2s ease, background .2s ease;
+}
+.chip:hover{ background:var(--pink); color:#fff; transform:translateY(-2px); }
+.chip.gold{ background:var(--gold-soft); color:#5B430F; }
+.chip.gold:hover{ background:var(--gold); }
+.chip.list{ background:#fff; }
+
+.tip-box{
+  margin-top:16px;
+  background:linear-gradient(120deg, var(--pink-soft), #fff);
+  border-left:3px solid var(--gold);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:15px 20px;
+  font-size:14.5px; color:var(--text);
+  display:flex; gap:10px; align-items:flex-start;
+}
+.tip-box .tip-icon{ font-size:17px; flex-shrink:0; margin-top:1px; }
+.tip-box b{ color:var(--pink-dark); }
+
+/* ---------- Polaroid photo grid ---------- */
+.polaroid-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+  gap:22px 18px; margin-top:22px;
+}
+.polaroid-grid.single{ grid-template-columns:minmax(220px, 360px); justify-content:center; }
+.polaroid{
+  background:#fff; padding:12px 12px 40px; border-radius:6px;
+  box-shadow:0 14px 30px -12px rgba(70,53,61,.28), 0 2px 6px rgba(70,53,61,.08);
+  transform:rotate(var(--rot, -2deg));
+  transition:transform .35s cubic-bezier(.2,.8,.3,1), box-shadow .35s ease, z-index 0s;
+  position:relative;
+}
+.polaroid:hover{ transform:rotate(0deg) scale(1.045) translateY(-4px); box-shadow:0 24px 44px -16px rgba(70,53,61,.36); z-index:5; }
+.polaroid-photo{ border-radius:2px; overflow:hidden; height:180px; background:var(--bg-secondary); }
+.polaroid-photo img{ transition:transform .6s ease; }
+.polaroid:hover .polaroid-photo img{ transform:scale(1.08); }
+.polaroid figcaption{
+  position:absolute; bottom:10px; left:12px; right:12px;
+  font-family:var(--serif); font-style:italic; font-size:12.5px; color:var(--text-soft);
+  text-align:center; line-height:1.3;
+}
+
+/* ---------- Night section ---------- */
+.night-section{
+  background:linear-gradient(160deg, var(--night), #2C1524);
+  color:#F3DCE7; margin-top:130px; padding:80px 0; position:relative; z-index:2;
+  overflow:hidden;
+}
+.night-section::before{
+  content:""; position:absolute; inset:0; opacity:.5; pointer-events:none;
+  background-image:radial-gradient(rgba(216,179,106,.35) 1px, transparent 1.4px);
+  background-size:34px 34px;
+}
+.night-section .day-ribbon{ background:var(--gold); color:#3A2A05; }
+.night-section .day-ribbon::after{ border-color:transparent transparent transparent var(--gold); }
+.night-section h2{ color:#FBEFE0; margin-top:18px; }
+.night-section .stroll{ color:#E7C9D8; margin-top:14px; font-size:15.5px; max-width:640px; }
+.night-section .stroll b{ color:#fff; }
+.night-grid{ margin-top:34px; display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); }
+.night-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--night-border);
+  border-radius:22px; padding:26px;
+  backdrop-filter:blur(10px);
+  transition:transform .35s ease, background .35s ease;
+}
+.night-card:hover{ transform:translateY(-6px); background:rgba(255,255,255,.1); }
+.night-card h4{ font-family:var(--serif); font-size:19px; color:#fff; display:flex; align-items:center; gap:8px; }
+.night-card p{ margin-top:9px; font-size:14px; color:#DCC0CF; }
+.night-card .dist{ margin-top:14px; font-size:12.5px; color:var(--gold-soft); font-weight:600; }
+
+/* ---------- Weather cards ---------- */
+.weather-section{ max-width:1180px; margin:110px auto 0; padding:0 28px; position:relative; z-index:2; }
+.section-title{ text-align:center; max-width:640px; margin:0 auto 40px; }
+.section-title .eyebrow{ display:flex; justify-content:center; }
+.section-title h2{ font-size:clamp(28px,4vw,40px); margin-top:14px; }
+.section-title p{ color:var(--text-soft); margin-top:10px; font-size:15px; }
+.weather-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; }
+.weather-card{
+  background:var(--card); backdrop-filter:blur(18px); border:1px solid var(--border);
+  border-radius:24px; padding:28px; text-align:center; box-shadow:var(--shadow-card);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.weather-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-hover); }
+.weather-card .icon{ font-size:38px; }
+.weather-card h4{ font-family:var(--serif); font-size:20px; margin-top:10px; }
+.weather-card .temp{ font-family:var(--serif); font-size:30px; color:var(--pink-dark); font-weight:700; margin-top:8px; }
+.weather-card .desc{ font-size:13px; color:var(--text-soft); margin-top:6px; }
+.weather-note{ text-align:center; font-size:12px; color:var(--text-soft); margin-top:18px; font-style:italic; }
+
+/* ---------- Map section ---------- */
+.map-section{ max-width:1180px; margin:110px auto 0; padding:0 28px; position:relative; z-index:2; }
+.map-buttons{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:26px; }
+.map-select-btn{
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  font-weight:600; font-size:14px; padding:12px 26px; border-radius:999px; cursor:pointer;
+  transition:all .25s ease; box-shadow:var(--shadow-card);
+}
+.map-select-btn.active, .map-select-btn:hover{ background:var(--pink-dark); color:#fff; transform:translateY(-2px); }
+.map-frame-wrap{
+  border-radius:var(--radius); overflow:hidden; border:1px solid var(--border);
+  box-shadow:var(--shadow-card); height:420px;
+}
+.map-frame-wrap iframe{ width:100%; height:100%; border:0; }
+.map-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:22px; }
+
+/* ---------- Checklist ---------- */
+.checklist-section{ max-width:900px; margin:110px auto 0; padding:0 28px; position:relative; z-index:2; }
+.checklist-progress-wrap{
+  background:var(--card); border:1px solid var(--border); border-radius:999px; height:14px;
+  overflow:hidden; margin-bottom:34px; box-shadow:inset 0 2px 6px rgba(164,62,103,.15);
+}
+.checklist-progress-fill{
+  height:100%; width:0%; border-radius:999px;
+  background:linear-gradient(90deg, var(--gold), var(--pink));
+  transition:width .4s ease;
+}
+.checklist-percent{ text-align:center; font-size:13px; color:var(--text-soft); margin-top:-24px; margin-bottom:30px; font-weight:600; }
+.checklist-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+.checklist-card{
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:24px 26px; box-shadow:var(--shadow-card);
+}
+.checklist-card h4{ font-family:var(--serif); font-size:18px; display:flex; align-items:center; gap:8px; margin-bottom:14px; }
+.checklist-item{ display:flex; align-items:center; gap:10px; padding:8px 0; font-size:14.5px; border-bottom:1px dashed var(--border); cursor:pointer; user-select:none; }
+.checklist-item:last-child{ border-bottom:none; }
+.checklist-item input{ width:18px; height:18px; accent-color:var(--pink-dark); cursor:pointer; flex-shrink:0; }
+.checklist-item span{ transition:color .2s ease, text-decoration-color .2s ease; }
+.checklist-item input:checked + span{ color:var(--text-soft); text-decoration:line-through; text-decoration-color:var(--pink); }
+
+/* ---------- Footer ---------- */
+footer{
+  max-width:1180px; margin:130px auto 0; padding:70px 28px 60px; position:relative; z-index:2;
+  text-align:center;
+}
+footer .sig{
+  font-family:var(--serif); font-style:italic; font-size:clamp(26px,4vw,36px); color:var(--pink-dark); margin-bottom:14px;
+}
+footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 auto; }
+.footer-stickers{ display:flex; justify-content:center; gap:16px; margin-top:26px; font-size:22px; }
+.footer-stickers span{ animation:sway 5s ease-in-out infinite; }
+
+@media(max-width:640px){
+  .day-header{ margin:90px auto 26px; }
+  .stop-card{ padding:32px 20px 24px; }
+  .stop-time{ left:20px; font-size:11.5px; padding:8px 16px; }
+  .polaroid-grid{ grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); }
+  .ticket{ flex-direction:column; }
+  .ticket::before,.ticket::after{ display:none; }
+  .ticket-line{ width:100%; }
+}
+
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Roteiro de viagem</div>
-    <h1 class="title">Vamos a<br><em>la España</em></h1>
-    <p class="subtitle"> Cinco amigas e uma semana inteira para percorrer 3 cidades espanholas.</p>
-        <div class="stat-row">
-      <div class="stat"><div class="n">45</div><div class="l">pontos de interesse</div></div>
-      <div class="stat"><div class="n">9</div><div class="l">dias completos</div></div>
-      <div class="stat"><div class="n">4</div><div class="l">cidades</div></div>
-    </div>
-  </div>
+<div class="progress-bar"></div>
 
-  <div class="hero-photo">
-    <img src="grupo-hero.jpg" alt="As cinco amigas, prontas para a viagem" loading="lazy" decoding="async">
+<nav class="navbar">
+  <div class="wrap">
+    <a href="#top" class="nav-brand">🎀 Girls Trip</a>
+    <ul class="nav-links">
+      <li><a href="#madrid">Madrid</a></li>
+      <li><a href="#alicante">Alicante</a></li>
+      <li><a href="#valencia">Valência</a></li>
+      <li><a href="#mapa">Mapa</a></li>
+      <li><a href="#checklist">Checklist</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
   </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="grupo-hero.jpg" alt="Costa Blanca, Espanha" loading="eager"></div>
+  <span class="sticker" style="top:18%; left:8%;">🎀</span>
+  <span class="sticker s2" style="top:28%; right:10%;">✈️</span>
+  <span class="sticker s3" style="top:65%; left:14%;">🌸</span>
+  <span class="sticker s4" style="top:70%; right:14%;">✨</span>
+  <span class="sticker s2" style="top:14%; right:26%; font-size:16px;">🍓</span>
+  <div class="hero-content">
+    <span class="hero-eyebrow">☀ Summer 2026</span>
+    <h1>Girls <em>Trip</em></h1>
+    <div class="cities">
+      <span>Madrid</span><span class="dot">·</span><span>Alicante</span><span class="dot">·</span><span>Valência</span>
+    </div>
+    <p class="tagline">Cinco amigas e uma semana inteira para percorrer 3 cidades espanholas.</p>
+  </div>
+  <div class="scroll-cue"><span></span>scroll</div>
 </section>
 
-    <div class="route">
-      <div class="route-stop">
-        <div class="city">Porto</div>
-        <div class="time mono">22:00</div>
-        <div class="date">28 de julho</div>
+<div class="stats-strip">
+  <div class="stats-card">
+    <div class="stat-block"><div class="n">45</div><div class="l">pontos de interesse</div></div><div class="stats-divider"></div><div class="stat-block"><div class="n">9</div><div class="l">dias completos</div></div><div class="stats-divider"></div><div class="stat-block"><div class="n">4</div><div class="l">cidades</div></div>
+    <div class="stats-divider"></div>
+    <div class="countdown-block">
+      <div class="l">Contagem decrescente até à partida</div>
+      <div class="countdown-nums">
+        <div><div class="num" data-cd="days">00</div><div class="lab">dias</div></div>
+        <div><div class="num" data-cd="hours">00</div><div class="lab">horas</div></div>
+        <div><div class="num" data-cd="mins">00</div><div class="lab">min</div></div>
       </div>
-      <div class="route-line"><span class="bus">🚌</span></div>
-      <div class="route-stop">
-        <div class="city">Madrid</div>
-        <div class="time mono">06:30</div>
-        <div class="date">29 de julho</div>
-      </div>
-      <div class="route-meta">Estación Sur de Autobuses · viagem noturna, ~8h30</div>
+      <div class="l" data-cd-label style="margin-top:8px;">Porto → Madrid, 28 de julho às 22:00</div>
     </div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 1 · 29 de julho</span>
-  <h2>Do Sol ao Bernabéu</h2>
-  <p class="day-sub">Chegada de madrugada, centro histórico de manhã, moda e futebol à tarde, jantar e noite em Malasaña.</p>
+  </div>
 </div>
 
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>06:00</span></div>
-      <h3>Chegada à Estación Sur</h3>
-      <p class="stop-note">Comprar já o passe de 24 horas e apanhar o metro até Sol.</p>
-      <div class="tag-row"><span class="tag">🚇 passe 24h</span><span class="tag">metro → Sol</span></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>07:00</span></div>
-      <h3>Deixar as malas</h3>
-      <p class="stop-note">Como o check-in só é às 15:00, o melhor é deixar as malas junto ao alojamento, num ponto de lockers. Decidir no momento o sítio ou marcar previamente nestes sites indicados em abaixo: </p>
-      <ul>
-        <li>Bounce (zona Sol)</li>
-        <li>Radical Storage</li>
-        <li>LuggageHero</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>07:15</span></div>
-      <h3>Pequeno-almoço perto da Sol</h3>
-      <ul>
-        <li>Mercadona</li>
-        <li>Padaria local</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>08:00</span></div>
-      <h3>Centro histórico</h3>
-      <div class="poi-chain">
-        <span>1 · Puerta del Sol</span>
-        <span>2 · Plaza Mayor</span>
-        <span>3 · Mercado de San Miguel</span>
-        <span>4 · Plaza de la Villa</span>
-        <span>5 · Palacio Real</span>
-        <span>6 · Catedral da Almudena</span>
-        <span>7 · Jardines de Sabatini</span>
-        <span>8 · Templo de Debod</span>
-      </div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerta%20del%20Sol%20(Madrid)%2011.jpg?width=900" alt="Puerta del Sol, Madrid" loading="lazy" decoding="async"></div>
-      <div class="tip"><b>Sugestão</b> —  A Chocolatería San Ginés fica a cerca de 5 minutos da Sol.Os churros mais famosos de Madrid!.</div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Mayor%20de%20Madrid%2006.jpg?width=900" alt="Plaza Mayor, Madrid" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20Real%20de%20Madrid%20-%2021.jpg?width=900" alt="Palacio Real, Madrid" loading="lazy" decoding="async"></div>
-      <div class="tip"><b>Sugestão</b> — Muito perto do Palácio Real fica a La Tienda de los Deseos, uma das lojas mais populares no TikTok. Vale a pena entrar 10 minutos antes de seguir para o palácio.</div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catedral%20de%20la%20Almudena%20-%20130826%20211731.jpg?width=900" alt="Catedral de la Almudena, Madrid" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20de%20Debod%20-%2007.jpg?width=900" alt="Templo de Debod, Madrid" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>12:30</span></div>
-      <h3>Almoço rápido no Mercadona</h3>
-      <p class="stop-note">Calle Montera, a poucos minutos da Gran Vía e do alojamento - (almoço rápido e barato).</p>
-      <div class="tag-row">
-        <span class="tag">sushi</span><span class="tag">wrap</span><span class="tag">salada</span>
-        <span class="tag">sandes</span><span class="tag">bebida</span><span class="tag">fruta</span>
+<div class="ticket-wrap"><div class="ticket">
+      <div class="ticket-stop"><div class="city">Porto</div><div class="time">22:00</div><div class="date">28 de julho</div></div>
+      <div class="ticket-line"><span class="icon">🚌</span></div>
+      <div class="ticket-stop"><div class="city">Madrid</div><div class="time">06:30</div><div class="date">29 de julho</div></div>
+      <div class="ticket-meta">Estación Sur de Autobuses · viagem noturna, ~8h30</div>
+    </div></div>
+<div class="day-header" id="madrid">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🏛️ Dia 1 · 29 de julho</span>
+          <h2>Do Sol ao Bernabéu</h2>
+          <p class="day-sub">Chegada de madrugada, centro histórico de manhã, moda e futebol à tarde, jantar e noite em Malasaña.</p>
+        </div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Madrid,+Spain" target="_blank" rel="noopener">🗺️ Ver Madrid no mapa</a>
       </div>
     </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>15:00</span></div>
-      <h3>Check-in</h3>
-      <p class="stop-note">Ir buscar as malas, fazer o check-in e descansar cerca de 30 minutos antes de voltar à rua.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>16:00</span></div>
-      <h3>Centro moderno</h3>
-      <div class="poi-chain">
-        <span>9 · Gran Vía</span>
-        <span>10 · Plaza del Callao</span>
-        <span>11 · Edificio Metrópolis</span>
-        <span>12 · Plaza de Cibeles</span>
-        <span>13 · Puerta de Alcalá</span>
-        <span>14 · Parque del Retiro</span>
-        <span>15 · Palacio de Cristal</span>
-      </div>
-      <p class="stop-note" style="margin-top:12px;">Lojas na Gran Vía: Zara, Primark, Nike, Adidas.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG?width=900" alt="Gran Vía, Madrid" loading="lazy" decoding="async"></div>
-      <div class="tip"><b>Sugestão</b> — Subir ao Gourmet Experience, no El Corte Inglés de Callao. É um dos rooftops mais conhecidos de Madrid, mesmo sobre a Gran Vía. Melhor ao final da tarde, antes do pôr do sol.</div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20de%20Cristal%2C%20Retiro%2C%20Madrid.jpg?width=900" alt="Palacio de Cristal, Parque del Retiro, Madrid" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monumento%20Alfonso%20XII%2C%20parque%20del%20Retiro.JPG?width=900" alt="Monumento a Alfonso XII, Parque del Retiro, Madrid" loading="lazy" decoding="async"></div>
-      <div class="tip"><b>Sugestão</b> — Antes de seguir para o Bernabéu, passem pela 99 Cheesecake em Malasaña para provar a famosa cheesecake. Encaixa bem nesta fase da tarde, antes de apanhar o metro.</div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>19:00</span></div>
-      <h3>Santiago Bernabéu</h3>
-      <p class="stop-note">Exterior, loja oficial e, se fizerem, o tour ao estádio.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%20Stadium%20-%20Exterior%2002.JPG?width=900" alt="Estádio Santiago Bernabéu, Madrid" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>20:30</span></div>
-      <h3>Regresso ao alojamento</h3>
-      <p class="stop-note">Banho e troca de roupa antes do jantar.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>21:30</span></div>
-      <h3>Jantar — Lateral Fuencarral</h3>
-      <p class="stop-note">Excelente ambiente, muito perto da Gran Vía e já ficam na melhor zona para sair depois.Também podemos cozinhar e, depois, no regresso a Madrid, se sobrar dinheiro, jantamos neste sítio.</p>
-    </div>
-  </div>
-
-</div>
-
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">06:00</div>
+        <h3><span class="stop-icon">🧳</span>Chegada à Estación Sur</h3>
+<p class="stop-note">Comprar já o passe de 24 horas e apanhar o metro até Sol.</p>
+<div class="chip-row"><span class="chip gold">🚇 passe 24h</span><span class="chip gold">metro → Sol</span></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">07:00</div>
+        <h3><span class="stop-icon">🧳</span>Deixar as malas</h3>
+<p class="stop-note">Como o check-in só é às 15:00, o melhor é deixar as malas junto ao alojamento, num ponto de lockers. Decidir no momento o sítio ou marcar previamente nestes sites indicados em abaixo:</p>
+<div class="chip-row"><span class="chip list">Bounce (zona Sol)</span><span class="chip list">Radical Storage</span><span class="chip list">LuggageHero</span></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">07:15</div>
+        <h3><span class="stop-icon">🥐</span>Pequeno-almoço perto da Sol</h3>
+<div class="chip-row"><span class="chip list">Mercadona</span><span class="chip list">Padaria local</span></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">08:00</div>
+        <h3><span class="stop-icon">🏛️</span>Centro histórico</h3>
+<div class="chip-row"><span class="chip">📍 1 · Puerta del Sol</span><span class="chip">📍 2 · Plaza Mayor</span><span class="chip">📍 3 · Mercado de San Miguel</span><span class="chip">📍 4 · Plaza de la Villa</span><span class="chip">📍 5 · Palacio Real</span><span class="chip">📍 6 · Catedral da Almudena</span><span class="chip">📍 7 · Jardines de Sabatini</span><span class="chip">📍 8 · Templo de Debod</span></div>
+<div class="tip-box"><span class="tip-icon">💖</span><span><b>Sugestão</b> — A Chocolatería San Ginés fica a cerca de 5 minutos da Sol.Os churros mais famosos de Madrid!.</span></div>
+<div class="tip-box"><span class="tip-icon">💖</span><span><b>Sugestão</b> — Muito perto do Palácio Real fica a La Tienda de los Deseos, uma das lojas mais populares no TikTok. Vale a pena entrar 10 minutos antes de seguir para o palácio.</span></div>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerta%20del%20Sol%20(Madrid)%2011.jpg?width=900" alt="Puerta del Sol, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Puerta del Sol, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Mayor%20de%20Madrid%2006.jpg?width=900" alt="Plaza Mayor, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Plaza Mayor, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20Real%20de%20Madrid%20-%2021.jpg?width=900" alt="Palacio Real, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Palacio Real, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catedral%20de%20la%20Almudena%20-%20130826%20211731.jpg?width=900" alt="Catedral de la Almudena, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Catedral de la Almudena, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:-1.5deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20de%20Debod%20-%2007.jpg?width=900" alt="Templo de Debod, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Templo de Debod, Madrid</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">12:30</div>
+        <h3><span class="stop-icon">🍽️</span>Almoço rápido no Mercadona</h3>
+<p class="stop-note">Calle Montera, a poucos minutos da Gran Vía e do alojamento - (almoço rápido e barato).</p>
+<div class="chip-row"><span class="chip gold">sushi</span><span class="chip gold">wrap</span><span class="chip gold">salada</span><span class="chip gold">sandes</span><span class="chip gold">bebida</span><span class="chip gold">fruta</span></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">15:00</div>
+        <h3><span class="stop-icon">🛎️</span>Check-in</h3>
+<p class="stop-note">Ir buscar as malas, fazer o check-in e descansar cerca de 30 minutos antes de voltar à rua.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">16:00</div>
+        <h3><span class="stop-icon">🛍️</span>Centro moderno</h3>
+<div class="chip-row"><span class="chip">📍 9 · Gran Vía</span><span class="chip">📍 10 · Plaza del Callao</span><span class="chip">📍 11 · Edificio Metrópolis</span><span class="chip">📍 12 · Plaza de Cibeles</span><span class="chip">📍 13 · Puerta de Alcalá</span><span class="chip">📍 14 · Parque del Retiro</span><span class="chip">📍 15 · Palacio de Cristal</span></div>
+<p class="stop-note">Lojas na Gran Vía: Zara, Primark, Nike, Adidas.</p>
+<div class="tip-box"><span class="tip-icon">💖</span><span><b>Sugestão</b> — Subir ao Gourmet Experience, no El Corte Inglés de Callao. É um dos rooftops mais conhecidos de Madrid, mesmo sobre a Gran Vía. Melhor ao final da tarde, antes do pôr do sol.</span></div>
+<div class="tip-box"><span class="tip-icon">💖</span><span><b>Sugestão</b> — Antes de seguir para o Bernabéu, passem pela 99 Cheesecake em Malasaña para provar a famosa cheesecake. Encaixa bem nesta fase da tarde, antes de apanhar o metro.</span></div>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG?width=900" alt="Gran Vía, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Gran Vía, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20de%20Cristal%2C%20Retiro%2C%20Madrid.jpg?width=900" alt="Palacio de Cristal, Parque del Retiro, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Palacio de Cristal, Parque del Retiro, Madrid</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monumento%20Alfonso%20XII%2C%20parque%20del%20Retiro.JPG?width=900" alt="Monumento a Alfonso XII, Parque del Retiro, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Monumento a Alfonso XII, Parque del Retiro, Madrid</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">19:00</div>
+        <h3><span class="stop-icon">⚽</span>Santiago Bernabéu</h3>
+<p class="stop-note">Exterior, loja oficial e, se fizerem, o tour ao estádio.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%20Stadium%20-%20Exterior%2002.JPG?width=900" alt="Estádio Santiago Bernabéu, Madrid" loading="lazy" decoding="async"></div>
+        <figcaption>Estádio Santiago Bernabéu, Madrid</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">20:30</div>
+        <h3><span class="stop-icon">🔙</span>Regresso ao alojamento</h3>
+<p class="stop-note">Banho e troca de roupa antes do jantar.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">21:30</div>
+        <h3><span class="stop-icon">🍽️</span>Jantar — Lateral Fuencarral</h3>
+<p class="stop-note">Excelente ambiente, muito perto da Gran Vía e já ficam na melhor zona para sair depois.Também podemos cozinhar e, depois, no regresso a Madrid, se sobrar dinheiro, jantamos neste sítio.</p>
+</div></div></div>
 <section class="night-section">
-  <div class="wrap">
-    <span class="day-tag">Depois do jantar</span>
-    <h2>Chueca · Malasaña · Gran Vía</h2>
-    <p class="stroll" style="margin-top:16px;">Um passeio por estas três zonas antes de escolher onde sair. <b>Para sair à noite</b>, três opções:</p>
-    <div class="night-grid">
-      <div class="night-card">
-        <h4>Teatro Kapital</h4>
+      <div class="wrap">
+        <span class="day-ribbon">🌙 Depois do jantar</span>
+        <h2>Chueca · Malasaña · Gran Vía</h2>
+        <p class="stroll">Um passeio por estas três zonas antes de escolher onde sair. <b>Para sair à noite</b>, três opções:</p>
+        <div class="night-grid"><div class="night-card">
+        <h4>🪩 Teatro Kapital</h4>
         <p>Discoteca grande e muito conhecida com 7 andares.</p>
         <div class="dist">🚇 ~12 min de metro do alojamento</div>
-      </div>
-      <div class="night-card">
-        <h4>FITZ</h4>
+      </div><div class="night-card">
+        <h4>🪩 FITZ</h4>
         <p>Muito popular entre universitários e turistas.</p>
         <div class="dist">🚇 ~15 min de metro</div>
-      </div>
-      <div class="night-card">
-        <h4>Barceló Theatre</h4>
+      </div><div class="night-card">
+        <h4>🪩 Barceló Theatre</h4>
         <p>Boa opção se já estiverem na zona de Malasaña.</p>
         <div class="dist">🚶 ~15 min a pé do Lateral Fuencarral</div>
+      </div></div>
       </div>
+    </section>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 2 · 30 de julho</span>
+          <h2>Últimas horas em Madrid</h2>
+          <p class="day-sub">Uma manhã tranquila antes do regresso - pequeno-almoço, último paseio pela cidade.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p>Uma mala pequena, cinco amigas e um verão inteiro por explorar.</p>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">08:30</div>
+        <h3><span class="stop-icon">🥐</span>Pequeno-almoço</h3>
+<p class="stop-note">Tomar em casa ou, se quisermos, ir à Chocolatería San Ginés.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">09:30</div>
+        <h3><span class="stop-icon">🚶</span>Último passeio</h3>
+<p class="stop-note">Passeio final pela Sol ou pela Gran Vía. Depois vemos que zona queremos ver melhor consoante o dia anterior. )</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">10:20</div>
+        <h3><span class="stop-icon">🧳</span>Check-out</h3>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">10:35</div>
+        <h3><span class="stop-icon">🚇</span>Metro para Madrid Atocha</h3>
+<p class="stop-note">Apanha-se o comboio para Alicante.</p>
+</div></div></div>
+<div class="transfer-block">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <span class="transfer-tag">🚆 🚆 Mudança de cidade</span>
+      <h2>Madrid → Alicante</h2>
+      <div class="ticket">
+        <div class="ticket-stop"><div class="city">Madrid</div><div class="time">11:05</div><div class="date">30 de julho</div></div>
+        <div class="ticket-line"><span class="icon">🚆</span></div>
+        <div class="ticket-stop"><div class="city">Alicante</div><div class="time">13:31</div><div class="date">30 de julho</div></div>
+        <div class="ticket-meta">Madrid Atocha → Terminal de Alicante</div>
+      </div>
+    </div>
+<div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p>As melhores histórias começam sempre com uma passagem só de ida... e um bom protetor solar.</p>
+    </div>
+<div class="day-header" id="alicante">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌊 Dia 3 · 30 de julho</span>
+          <h2>Chegada a Alicante + primeira praia + centro</h2>
+          <p class="day-sub">Chegada de comboio, check-in junto à Calle Zaragoza e uma tarde a pé pelo Barrio de Santa Cruz, o centro histórico e a Playa del Postiguet.</p>
+        </div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Alicante,+Spain" target="_blank" rel="noopener">🗺️ Ver Alicante no mapa</a>
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">13:31</div>
+        <h3><span class="stop-icon">🧳</span>Chegada ao Terminal de Alicante</h3>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">13:30/14:00</div>
+        <h3><span class="stop-icon">🛎️</span>Check-in no alojamento</h3>
+<p class="stop-note">Ir diretamente para o alojamento deixar as malas e preparar a tarde.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">15:00</div>
+        <h3><span class="stop-icon">📍</span>Conhecer Alicante a pé</h3>
+<div class="chip-row"><span class="chip">📍 1 · Barrio de Santa Cruz ⭐</span><span class="chip">📍 2 · Concatedral de San Nicolás</span><span class="chip">📍 3 · Plaza del Ayuntamiento</span><span class="chip">📍 4 · Playa del Postiguet</span></div>
+<p class="stop-note">Barrio de Santa Cruz: casinhas brancas, escadinhas e vasos de flores no bairro mais antigo da cidade.</p>
+<p class="stop-note">Depois do passeio ir dar um mergulho à praia.</p>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://thumbs.web.sapo.io/?W=800&amp;H=0&amp;delay_optim=1&amp;epic=NWVidzbnAU6Co2GqsQlesguo8kLPfBO5iVulT1Rb71ZpWKgOKbqLFf7kUw6dLbRXywoPNgjcbYuWezdefkfNIB39nCGdFfoOBfIQ6rZDjATvlis=" alt="Conhecer Alicante a pé" loading="lazy" decoding="async"></div>
+        <figcaption>Conhecer Alicante a pé</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://www.renfe.com/es/es/revistaclub/a---de-200/alicante-vida-de-barrio/_jcr_content/root/responsivegrid/rfdetail_1006462247/responsivegrid/rfimg.coreimg.jpeg/1682582010560/a-mas-200-alicante-macetas-azules.jpeg" alt="Conhecer Alicante a pé" loading="lazy" decoding="async"></div>
+        <figcaption>Conhecer Alicante a pé</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Concatedral%20Nicolas%20de%20Bari%20Alicante.JPG?width=900" alt="Concatedral de San Nicolás, Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Concatedral de San Nicolás, Alicante</figcaption>
+      </figure><figure class="polaroid" style="--rot:3deg;">
+        <div class="polaroid-photo"><img src="https://www.alicanteholidayvillas.com/images/page_upload/35475082_1640523955996975_3146812775594983424_n.jpg" alt="Conhecer Alicante a pé" loading="lazy" decoding="async"></div>
+        <figcaption>Conhecer Alicante a pé</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">final do dia</div>
+        <h3><span class="stop-icon">🛍️</span>Mercadona para compras</h3>
+<div class="chip-row"><span class="chip gold">pequenos-almoços</span><span class="chip gold">águas</span><span class="chip gold">fruta</span><span class="chip gold">snacks</span><span class="chip gold">comida para os passeios</span></div>
+<p class="stop-note">Depois de desfrutar a praia, voltar a casa e fazer compras.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20-%20Paseo%20de%20la%20Explanada%20de%20Espa%C3%B1a%2001.jpg?width=900" alt="Explanada de España, Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Explanada de España, Alicante</figcaption>
+      </figure></div>
+</div></div></div>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 4 · 31 de julho</span>
+          <h2>Benidorm + Playa de San Juan 🚗</h2>
+          <p class="day-sub">Dia de carro alugado: manhã em Benidorm, mergulho na Playa de Levante e tarde na Playa de San Juan, já de volta a Alicante.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">08:30/09:00</div>
+        <h3><span class="stop-icon">🚗</span>Alugar carro e saída para Benidorm</h3>
+<p class="stop-note">🚗 Alicante → Benidorm: cerca de 45 minutos.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">manhã</div>
+        <h3><span class="stop-icon">🌇</span>Benidorm</h3>
+<div class="chip-row"><span class="chip">📍 1 · Centro histórico</span><span class="chip">📍 2 · Balcón del Mediterráneo ⭐</span><span class="chip">📍 3 · Iglesia de San Jaime y Santa Ana</span><span class="chip">📍 4 · Playa de Levante</span></div>
+<p class="stop-note">Passeio pelas ruas antigas do centro histórico.</p>
+<div class="tip-box"><span class="tip-icon">✨</span><span><b>Curiosidade</b> — Skyline de Benidorm: os arranha-céus junto à praia aleram à cidade a alcunha de "Manhattan do Mediterrâneo".</span></div>
+<p class="stop-note">Dar um mergulho na Playa de Levante antes de seguir viagem.</p>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Benidorm%20-%20Balc%C3%B3n%20del%20Mediterr%C3%A1neo%201.jpg?width=900" alt="Balcón del Mediterráneo, Benidorm" loading="lazy" decoding="async"></div>
+        <figcaption>Balcón del Mediterráneo, Benidorm</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPuHhuwWF0n6RqS54dThtOpt19qOn0VfsQvb0HEuLux6J-A99O9G4uuWc&amp;s=10" alt="Benidorm" loading="lazy" decoding="async"></div>
+        <figcaption>Benidorm</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://www.civitatis.com/f/espana/benidorm/visita-guiada-benidorm-589x392.jpg" alt="Benidorm" loading="lazy" decoding="async"></div>
+        <figcaption>Benidorm</figcaption>
+      </figure><figure class="polaroid" style="--rot:3deg;">
+        <div class="polaroid-photo"><img src="https://multimedia.comunitatvalenciana.com/F94D3F07B5BF4A7A8DB7B58A9E49BF6E/img/56688EC5C4A24689A1EC36F054E616A7/D_C_BND_PL_T_PIK_29-32_Pan_orig_.jpg?responsive" alt="Benidorm" loading="lazy" decoding="async"></div>
+        <figcaption>Benidorm</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">13:30/14:00</div>
+        <h3><span class="stop-icon">🔙</span>Regresso a Alicante</h3>
+<p class="stop-note">Levar sandes para comer pelo caminho ou já na praia.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">tarde</div>
+        <h3><span class="stop-icon">🏖️</span>Playa de San Juan</h3>
+<p class="stop-note">Praia que tem os postos de nadador salvador semelhante a Miami.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://x.cdrst.com/zona/mr2/fotos/playa_de_san_juan/playa_de_san_juan_c6e0ad75d438cceb1fa6da01a63e88bc.jpg" alt="Playa de San Juan, Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Playa de San Juan, Alicante</figcaption>
+      </figure></div>
+</div></div></div>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 5 · 1 de agosto</span>
+          <h2>Cala Granadella + Cala El Portet 🚗</h2>
+          <p class="day-sub">O dia das praias mais bonitas do roteiro - águas transparentes, penhascos e muito protetor solar.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">08:00</div>
+        <h3><span class="stop-icon">🚗</span>Saída de Alicante</h3>
+<p class="stop-note">🚗 Cerca de 1h15/1h30 até à Cala Granadella.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">09:30–13:00</div>
+        <h3><span class="stop-icon">🏖️</span>Cala Granadella ⭐⭐⭐</h3>
+<p class="stop-note">Chegar cedo. Nadar, aproveitar a água transparente, fotos:)</p>
+<div class="chip-row"><span class="chip gold">sandes</span><span class="chip gold">muita água</span><span class="chip gold">protetor solar</span></div>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cala%20de%20la%20Granadella%2C%20J%C3%A1vea%2C%20Espa%C3%B1a%2C%202014-07-01%2C%20DD%2037.JPG?width=900" alt="Cala Granadella, Xàbia — água cristalina" loading="lazy" decoding="async"></div>
+        <figcaption>Cala Granadella, Xàbia — água cristalina</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">13:00</div>
+        <h3><span class="stop-icon">🚗</span>Deslocação</h3>
+<p class="stop-note">🚗 Cala Granadella → Cala El Portet: cerca de 25–35 minutos.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">14:00–17:30</div>
+        <h3><span class="stop-icon">🏖️</span>Cala El Portet</h3>
+<p class="stop-note">Baía abrigada de água turquesa, uma das mais bonitas da Costa Blanca.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://www.bindleyproperties.com/objetos/temp/source/bindley/bindleyproperties-noticias_67b0814ca43d5-source.jpeg" alt="Cala El Portet" loading="lazy" decoding="async"></div>
+        <figcaption>Cala El Portet</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">18:00/18:30</div>
+        <h3><span class="stop-icon">🔙</span>Regresso a Alicante</h3>
+</div></div></div>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 6 · 2 de agosto</span>
+          <h2>Castelo de Santa Bárbara + despedida de Alicante</h2>
+          <p class="day-sub">Manhã no grande ponto turístico da cidade, últimos passeios junto ao mar e comboio para Valência às 14:40.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">09:30</div>
+        <h3><span class="stop-icon">🏰</span>Castelo de Santa Bárbara ⭐⭐⭐</h3>
+<p class="stop-note">O grande ponto turístico de Alicante. Ver: muralhas, vistas sobre a cidade, porto, praias.</p>
+<div class="chip-row"><span class="chip gold">⏱️ 1h30–2h</span></div>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg?width=900" alt="Castillo de Santa Bárbara, Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Castillo de Santa Bárbara, Alicante</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">depois</div>
+        <h3><span class="stop-icon">📍</span>Últimos pontos</h3>
+<p class="stop-note">Casa Carbonell — edifício histórico junto à Explanada — e um passeio final pelo porto e marina.</p>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20Carbonell%2C%20Alicante.jpg?width=900" alt="Casa Carbonell, Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Casa Carbonell, Alicante</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Alicante%20desde%20el%20Castillo%20de%20Santa%20B%C3%A1rbara.JPG?width=900" alt="Porto de Alicante" loading="lazy" decoding="async"></div>
+        <figcaption>Porto de Alicante</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">12:45/13:00</div>
+        <h3><span class="stop-icon">🏨</span>Voltar ao alojamento</h3>
+<p class="stop-note">Buscar as malas e seguir para a estação.</p>
+</div></div></div>
+<div class="transfer-block">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <span class="transfer-tag">🚆 🚆 Mudança de cidade</span>
+      <h2>Alicante → Valência</h2>
+      <div class="ticket">
+        <div class="ticket-stop"><div class="city">Alicante</div><div class="time">14:40</div><div class="date">2 de agosto</div></div>
+        <div class="ticket-line"><span class="icon">🚆</span></div>
+        <div class="ticket-stop"><div class="city">Valência</div><div class="time">17:09</div><div class="date">2 de agosto</div></div>
+        <div class="ticket-meta">Estação Valencia-Joaquín Sorolla</div>
+      </div>
+    </div>
+<div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p>Entre praias, tapas e noites longas, o que fica são as fotos e as gargalhadas.</p>
+    </div>
+<div class="day-header" id="valencia">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">✨ Dia 7 · 2 de agosto (sábado)</span>
+          <h2>Chegada + Ruzafa + centro iluminado + L'Umbracle</h2>
+          <p class="day-sub">Chegada a Valência, check-in, compras e uma noite a começar em Ruzafa e a acabar em grande no L'Umbracle.</p>
+        </div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Valencia,+Spain" target="_blank" rel="noopener">🗺️ Ver Valência no mapa</a>
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">17:09</div>
+        <h3><span class="stop-icon">🧳</span>Chegada a Valência</h3>
+<p class="stop-note">🚆 Estação: Valencia-Joaquín Sorolla.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">18:00</div>
+        <h3><span class="stop-icon">🏨</span>Ir para o alojamento</h3>
+<p class="stop-note">Como são 5 pessoas com malas, a opção mais prática é 🚕 táxi/Uber: 10–15 min, cerca de 10–15 € no total (2–3 € cada).</p>
+<p class="stop-note">Check-in: 📍 C/ de Tirant lo Blanch, 9</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">18:15/18:30</div>
+        <h3><span class="stop-icon">🛍️</span>Compras no Mercadona</h3>
+<p class="stop-note">A pé ou pequeno trajeto de autocarro, dependendo do supermercado escolhido.</p>
+<div class="chip-row"><span class="chip gold">pequenos-almoços</span><span class="chip gold">águas</span><span class="chip gold">comida para praia</span><span class="chip gold">refeições</span></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">20:30/21:00</div>
+        <h3><span class="stop-icon">🍹</span>Ruzafa</h3>
+<p class="stop-note">Alojamento → Ruzafa: 🚶 a pé (25–30 min), 🚌 autocarro, ou 🚕 Uber (6–10 €). Com 5 pessoas cansadas, o Uber compensa.</p>
+<p class="stop-note">Jantar no FINCA Bar de Barra, em Ruzafa.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">noite</div>
+        <h3><span class="stop-icon">🚶</span>Passeio noturno pelo centro iluminado</h3>
+<p class="stop-note">A pé: Ruzafa → Estación del Norte → Plaza de Toros de Valencia → Plaça de l'Ajuntament. Muito bonito à noite.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900" alt="Plaça de l'Ajuntament, Valência, à noite" loading="lazy" decoding="async"></div>
+        <figcaption>Plaça de l'Ajuntament, Valência, à noite</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">00:00</div>
+        <h3><span class="stop-icon">🪩</span>L'Umbracle / MYA</h3>
+<p class="stop-note">Centro → Cidade das Artes: 🚕 Uber, 8–12 € (cerca de 2 € cada, divididos por 5). Não se recomenda ir a pé de noite.</p>
+<p class="stop-note">Regresso Cidade das Artes → alojamento: 🚶 10–15 minutos a pé. Não é preciso Uber.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Umbr%C3%A1culo%2C%20Ciudad%20de%20las%20Artes%20y%20las%20Ciencias%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-29%2C%20DD%2043.JPG?width=900" alt="L'Umbracle, Ciudad de las Artes y las Ciencias, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>L'Umbracle, Ciudad de las Artes y las Ciencias, Valência</figcaption>
+      </figure></div>
+</div></div></div>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 8 · 3 de agosto (domingo)</span>
+          <h2>Centro histórico + Cidade das Artes + Praia + Marina</h2>
+          <p class="day-sub">O dia principal: manhã de monumentos, tarde futurista na Cidade das Artes, pôr do sol na Malvarrosa e noite na Marina.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">09:30</div>
+        <h3><span class="stop-icon">🏛️</span>Saída para o centro histórico</h3>
+<p class="stop-note">🚌 Autocarro (~20 min, usar SUMA) ou 🚕 Uber (8–10 €, dividido por 5 fica aceitável). Comprar 1 cartão SUMA 10.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">manhã</div>
+        <h3><span class="stop-icon">📍</span>Percurso a pé no centro</h3>
+<div class="chip-row"><span class="chip">📍 1 · Mercado Central</span><span class="chip">📍 2 · La Lonja de la Seda</span><span class="chip">📍 3 · Plaza Redonda</span><span class="chip">📍 4 · Catedral</span><span class="chip">📍 5 · Plaza de la Virgen</span><span class="chip">📍 6 · Barrio del Carmen</span><span class="chip">📍 7 · Torres de Serranos</span></div>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20mercado%20central%20de%20Valencia.JPG?width=900" alt="Mercado Central de Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Mercado Central de Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Consulado%20del%20Mar%20y%20Lonja%20de%20la%20Seda%20en%20Valencia.jpg?width=900" alt="La Lonja de la Seda, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>La Lonja de la Seda, Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Redonda%20Valencia%2001.JPG?width=900" alt="Plaza Redonda, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Plaza Redonda, Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catedral%20de%20Valencia%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20160.JPG?width=900" alt="Catedral de Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Catedral de Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:-1.5deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20de%20la%20Virgen%20-%20Valencia.jpg?width=900" alt="Plaza de la Virgen, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Plaza de la Virgen, Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:2.5deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carrer%20dels%20Soguers%2C%20barri%20del%20Carme%2C%20Val%C3%A8ncia.jpg?width=900" alt="Barrio del Carmen, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Barrio del Carmen, Valência</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2.5deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Serrano%2C%20Valencia.JPG?width=900" alt="Torres de Serranos, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Torres de Serranos, Valência</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">13:00</div>
+        <h3><span class="stop-icon">🥂</span>Rooftop no Atenea Sky</h3>
+<p class="stop-note">Bebida e vista da cidade. Não ficar muito tempo — a tarde ainda vai longa.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">14:00</div>
+        <h3><span class="stop-icon">🏨</span>Voltar ao alojamento</h3>
+<p class="stop-note">🚌 Autocarro ou 🚕 Uber (5 pessoas divididas, fica barato). Almoço leve — sandes e comida do Mercadona — e descanso.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">15:30</div>
+        <h3><span class="stop-icon">✨</span>Cidade das Artes e das Ciências</h3>
+<p class="stop-note">🚶 10–15 minutos a pé do alojamento — aqui é onde ele é perfeito.</p>
+<div class="chip-row"><span class="chip">📍 L'Hemisfèric</span><span class="chip">📍 Museu das Ciências</span><span class="chip">📍 Palau de les Arts</span><span class="chip">📍 L'Umbracle de dia</span><span class="chip">📍 lago</span></div>
+<p class="stop-note">Sem tempo para o Oceanogràfic desta vez.</p>
+<div class="polaroid-grid "><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Hemisf%C3%A9rico%2C%20Ciudad%20de%20las%20Artes%20y%20las%20Ciencias%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-29%2C%20DD%2071.JPG?width=900" alt="L'Hemisfèric, Ciudad de las Artes y las Ciencias" loading="lazy" decoding="async"></div>
+        <figcaption>L'Hemisfèric, Ciudad de las Artes y las Ciencias</figcaption>
+      </figure><figure class="polaroid" style="--rot:2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Museu%20de%20les%20Ciencies%20Principe%20Felipe.Valencia.jpg?width=900" alt="Museu de les Ciències Príncipe Felipe" loading="lazy" decoding="async"></div>
+        <figcaption>Museu de les Ciències Príncipe Felipe</figcaption>
+      </figure><figure class="polaroid" style="--rot:-2deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Palau%20de%20les%20Arts%20Reina%20Sof%C3%ADa%2C%20Valencia%20-%20Jan%202007.jpg?width=900" alt="Palau de les Arts Reina Sofía" loading="lazy" decoding="async"></div>
+        <figcaption>Palau de les Arts Reina Sofía</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">17:30</div>
+        <h3><span class="stop-icon">🏖️</span>Playa de la Malvarrosa</h3>
+<p class="stop-note">🚌 Cidade das Artes → Malvarrosa: 20–30 minutos. Levar toalhas, comida e água. Ficar até ao pôr do sol.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atardecer%20en%20la%20Playa%20Malvarrosa.jpg?width=900" alt="Pôr do sol na Playa de la Malvarrosa, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Pôr do sol na Playa de la Malvarrosa, Valência</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">noite</div>
+        <h3><span class="stop-icon">⛵</span>Marina de València</h3>
+<p class="stop-note">Passeio: Malvarrosa → Marina. Ambiente de luzes, barcos, bares e esplanadas.</p>
+<p class="stop-note">Regresso: 🚕 Uber Marina → alojamento, 8–12 € divididos por 5.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Veles%20e%20Vents.jpg?width=900" alt="Marina de València, edifício Veles e Vents" loading="lazy" decoding="async"></div>
+        <figcaption>Marina de València, edifício Veles e Vents</figcaption>
+      </figure></div>
+</div></div></div>
+<div class="day-header">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <div class="day-header-row">
+        <div>
+          <span class="day-ribbon">🌸 Dia 9 · 4 de agosto (segunda-feira)</span>
+          <h2>El Carmen + Mercado de Colón + Madrid</h2>
+          <p class="day-sub">Última manhã em Valência antes do comboio das 17:57 de regresso a Madrid.</p>
+        </div>
+        
+      </div>
+    </div>
+<div class="timeline"><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">manhã</div>
+        <h3><span class="stop-icon">🎨</span>El Carmen</h3>
+<p class="stop-note">Check-out e malas deixadas no alojamento. Ruas antigas, arte urbana, Torres de Serranos e Torres de Quart.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Cuart%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%2093.JPG?width=900" alt="Torres de Quart, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Torres de Quart, Valência</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">almoço</div>
+        <h3><span class="stop-icon">🛍️</span>Mercado de Colón</h3>
+<p class="stop-note">Passear e tomar algo.</p>
+<div class="polaroid-grid single"><figure class="polaroid" style="--rot:-3deg;">
+        <div class="polaroid-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercado%20de%20Col%C3%B3n%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20165.JPG?width=900" alt="Mercado de Colón, Valência" loading="lazy" decoding="async"></div>
+        <figcaption>Mercado de Colón, Valência</figcaption>
+      </figure></div>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">15:30</div>
+        <h3><span class="stop-icon">🏨</span>Voltar ao alojamento</h3>
+<p class="stop-note">Buscar as malas.</p>
+</div></div><div class="stop">
+      <div class="stop-card">
+        <div class="stop-time">16:30</div>
+        <h3><span class="stop-icon">🚉</span>Ir para a estação</h3>
+<p class="stop-note">Valencia-Joaquín Sorolla Station. Com malas: 🚕 Uber/táxi, cerca de 10 min, 8–12 €.</p>
+</div></div></div>
+<div class="transfer-block">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <span class="transfer-tag">🚆 🚆 Mudança de cidade</span>
+      <h2>Valência → Madrid</h2>
+      <div class="ticket">
+        <div class="ticket-stop"><div class="city">Valência</div><div class="time">17:57</div><div class="date">4 de agosto</div></div>
+        <div class="ticket-line"><span class="icon">🚆</span></div>
+        <div class="ticket-stop"><div class="city">Madrid</div><div class="time">chegada</div><div class="date">4 de agosto</div></div>
+        <div class="ticket-meta">Fim do roteiro — boa viagem de regresso! 🚆</div>
+      </div>
+    </div>
+<div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p>Espanha não se visita, sente-se — de preferência com as pessoas certas ao lado.</p>
+    </div>
+<section class="weather-section">
+  <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+  <div class="section-title">
+    <span class="eyebrow">☀ Clima habitual</span>
+    <h2>Como vestir a mala</h2>
+    <p>Valores típicos de agosto nestas cidades — referência geral, não uma previsão para os dias exatos da viagem.</p>
+  </div>
+  <div class="weather-grid">
+    <div class="weather-card">
+      <div class="icon">☀️</div>
+      <h4>Madrid</h4>
+      <div class="temp">24–35°C</div>
+      <div class="desc">Calor seco, céu limpo, noites amenas.</div>
+    </div>
+    <div class="weather-card">
+      <div class="icon">🏖️</div>
+      <h4>Alicante</h4>
+      <div class="temp">25–31°C</div>
+      <div class="desc">Sol constante e brisa do Mediterrâneo.</div>
+    </div>
+    <div class="weather-card">
+      <div class="icon">🌊</div>
+      <h4>Valência</h4>
+      <div class="temp">25–32°C</div>
+      <div class="desc">Quente e húmido, ótimo para praia.</div>
+    </div>
+  </div>
+  <p class="weather-note">Dica: protetor solar, chapéu e muita água todos os dias — e uma camisola leve para as noites em Madrid.</p>
+</section>
+
+<section class="map-section" id="mapa">
+  <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+  <div class="section-title">
+    <span class="eyebrow">🗺️ Onde estamos</span>
+    <h2>O mapa da viagem</h2>
+    <p>Escolhe a cidade para ver no mapa, ou abre diretamente no Google Maps.</p>
+  </div>
+  <div class="map-buttons">
+    <button class="map-select-btn active" data-map="https://www.google.com/maps?q=Madrid,Spain&output=embed">Madrid</button>
+    <button class="map-select-btn" data-map="https://www.google.com/maps?q=Alicante,Spain&output=embed">Alicante</button>
+    <button class="map-select-btn" data-map="https://www.google.com/maps?q=Valencia,Spain&output=embed">Valência</button>
+  </div>
+  <div class="map-frame-wrap">
+    <iframe src="https://www.google.com/maps?q=Madrid,Spain&output=embed" loading="lazy" title="Mapa da viagem" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="map-links">
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Madrid,+Spain" target="_blank" rel="noopener">🗺️ Madrid no Google Maps</a>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Alicante,+Spain" target="_blank" rel="noopener">🗺️ Alicante no Google Maps</a>
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Valencia,+Spain" target="_blank" rel="noopener">🗺️ Valência no Google Maps</a>
+  </div>
+</section>
+
+<section class="checklist-section" id="checklist">
+  <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+  <div class="section-title">
+    <span class="eyebrow">🧳 Prontas a partir</span>
+    <h2>Checklist da viagem</h2>
+    <p>Marca o que já está tratado — o progresso fica guardado neste dispositivo.</p>
+  </div>
+  <div class="checklist-progress-wrap"><div class="checklist-progress-fill"></div></div>
+  <div class="checklist-percent">0 de 0 itens prontos (0%)</div>
+  <div class="checklist-grid">
+    <div class="checklist-card">
+      <h4>📄 Documentos</h4>
+      <label class="checklist-item"><input type="checkbox" data-id="doc1"><span>Cartão de Cidadão / Passaporte</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="doc2"><span>Bilhetes de autocarro e comboio</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="doc3"><span>Reservas de alojamento impressas</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="doc4"><span>Seguro de viagem</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="doc5"><span>Carta de condução (para o carro alugado)</span></label>
+    </div>
+    <div class="checklist-card">
+      <h4>👜 Mala</h4>
+      <label class="checklist-item"><input type="checkbox" data-id="mala1"><span>Fatos de banho (mais do que um)</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="mala2"><span>Roupa leve de dia + uma peça para a noite</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="mala3"><span>Chinelos e calçado confortável para andar</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="mala4"><span>Toalha de praia</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="mala5"><span>Powerbank e carregadores</span></label>
+    </div>
+    <div class="checklist-card">
+      <h4>☀️ Praia &amp; Sol</h4>
+      <label class="checklist-item"><input type="checkbox" data-id="praia1"><span>Protetor solar</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="praia2"><span>Óculos de sol e chapéu</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="praia3"><span>Garrafa de água reutilizável</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="praia4"><span>Snacks para os passeios</span></label>
+    </div>
+    <div class="checklist-card">
+      <h4>💄 Beleza &amp; Noite</h4>
+      <label class="checklist-item"><input type="checkbox" data-id="beleza1"><span>Necessaire com essenciais</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="beleza2"><span>Perfume e maquilhagem para sair</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="beleza3"><span>Acessórios (braço, laços, brincos)</span></label>
+      <label class="checklist-item"><input type="checkbox" data-id="beleza4"><span>Câmara / telemóvel carregado para fotos</span></label>
     </div>
   </div>
 </section>
 
-<div class="day-header">
-  <span class="day-tag">Dia 2 · 30 de julho</span>
-  <h2>Últimas horas em Madrid</h2>
-  <p class="day-sub">Uma manhã tranquila antes do regresso - pequeno-almoço, último paseio pela cidade.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>08:30</span></div>
-      <h3>Pequeno-almoço</h3>
-      <p class="stop-note"> Tomar em casa ou, se quisermos, ir à Chocolatería San Ginés.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>09:30</span></div>
-      <h3>Último passeio</h3>
-      <p class="stop-note">Passeio final pela Sol ou pela Gran Vía. Depois vemos que zona queremos ver melhor consoante o dia anterior. )</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>10:20</span></div>
-      <h3>Check-out</h3>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>10:35</span></div>
-      <h3>Metro para Madrid Atocha</h3>
-      <p class="stop-note">Apanha-se o comboio para Alicante.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="transfer">
-  <span class="day-tag">🚆 Mudança de cidade</span>
-  <h2>Madrid → Alicante</h2>
-  <div class="route">
-    <div class="route-stop">
-      <div class="city">Madrid</div>
-      <div class="time mono">11:05</div>
-      <div class="date">30 de julho</div>
-    </div>
-    <div class="route-line"><span class="bus">🚆</span></div>
-    <div class="route-stop">
-      <div class="city">Alicante</div>
-      <div class="time mono">13:31</div>
-      <div class="date">30 de julho</div>
-    </div>
-    <div class="route-meta">Madrid Atocha → Terminal de Alicante</div>
-  </div>
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 3 · 30 de julho</span>
-  <h2>Chegada a Alicante + primeira praia + centro</h2>
-  <p class="day-sub">Chegada de comboio, check-in junto à Calle Zaragoza e uma tarde a pé pelo Barrio de Santa Cruz, o centro histórico e a Playa del Postiguet.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>13:31</span></div>
-      <h3>Chegada ao Terminal de Alicante</h3>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>13:30/14:00</span></div>
-      <h3>Check-in no alojamento</h3>
-      <p class="stop-note"> Ir diretamente para o alojamento deixar as malas e preparar a tarde.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>15:00</span></div>
-      <h3>Conhecer Alicante a pé</h3>
-      <div class="poi-chain">
-        <span>1 · Barrio de Santa Cruz ⭐</span>
-        <span>2 · Concatedral de San Nicolás</span>
-        <span>3 · Plaza del Ayuntamiento</span>
-        <span>4 · Playa del Postiguet</span>
-      </div>
-      <div class="stop-photo"><img src="https://thumbs.web.sapo.io/?W=800&H=0&delay_optim=1&epic=NWVidzbnAU6Co2GqsQlesguo8kLPfBO5iVulT1Rb71ZpWKgOKbqLFf7kUw6dLbRXywoPNgjcbYuWezdefkfNIB39nCGdFfoOBfIQ6rZDjATvlis=" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;">Barrio de Santa Cruz: casinhas brancas, escadinhas e vasos de flores no bairro mais antigo da cidade.</p>
-      <div class="stop-photo"><img src="https://www.renfe.com/es/es/revistaclub/a---de-200/alicante-vida-de-barrio/_jcr_content/root/responsivegrid/rfdetail_1006462247/responsivegrid/rfimg.coreimg.jpeg/1682582010560/a-mas-200-alicante-macetas-azules.jpeg" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Concatedral%20Nicolas%20de%20Bari%20Alicante.JPG?width=900" alt="Concatedral de San Nicolás, Alicante" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;"> Depois do passeio ir dar um mergulho à praia.</p>
-      <div class="stop-photo"><img src="https://www.alicanteholidayvillas.com/images/page_upload/35475082_1640523955996975_3146812775594983424_n.jpg" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>final do dia</span></div>
-      <h3>Mercadona para compras</h3>
-      <div class="tag-row">
-        <span class="tag">pequenos-almoços</span><span class="tag">águas</span><span class="tag">fruta</span>
-        <span class="tag">snacks</span><span class="tag">comida para os passeios</span>
-      </div>
-      <p class="stop-note" style="margin-top:12px;">Depois de desfrutar a praia, voltar a casa e fazer compras.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20-%20Paseo%20de%20la%20Explanada%20de%20Espa%C3%B1a%2001.jpg?width=900" alt="Explanada de España, Alicante" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 4 · 31 de julho</span>
-  <h2>Benidorm + Playa de San Juan 🚗</h2>
-  <p class="day-sub">Dia de carro alugado: manhã em Benidorm, mergulho na Playa de Levante e tarde na Playa de San Juan, já de volta a Alicante.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>08:30/09:00</span></div>
-      <h3>Alugar carro e saída para Benidorm</h3>
-      <p class="stop-note">🚗 Alicante → Benidorm: cerca de 45 minutos.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>manhã</span></div>
-      <h3>Benidorm</h3>
-      <div class="poi-chain">
-        <span>1 · Centro histórico</span>
-        <span>2 · Balcón del Mediterráneo ⭐</span>
-        <span>3 · Iglesia de San Jaime y Santa Ana</span>
-        <span>4 · Playa de Levante</span>
-      </div>
-      <p class="stop-note" style="margin-top:12px;">Passeio pelas ruas antigas do centro histórico.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Benidorm%20-%20Balc%C3%B3n%20del%20Mediterr%C3%A1neo%201.jpg?width=900" alt="Balcón del Mediterráneo, Benidorm" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPuHhuwWF0n6RqS54dThtOpt19qOn0VfsQvb0HEuLux6J-A99O9G4uuWc&s=10" loading="lazy" decoding="async"></div>
-      <div class="tip"><b>Curiosidade</b> - Skyline de Benidorm: os arranha-céus junto à praia aleram à cidade a alcunha de "Manhattan do Mediterrâneo".</div>
-      <div class="stop-photo"><img src="https://www.civitatis.com/f/espana/benidorm/visita-guiada-benidorm-589x392.jpg" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;">Dar um mergulho na Playa de Levante antes de seguir viagem.</p>
-      <div class="stop-photo"><img src="https://multimedia.comunitatvalenciana.com/F94D3F07B5BF4A7A8DB7B58A9E49BF6E/img/56688EC5C4A24689A1EC36F054E616A7/D_C_BND_PL_T_PIK_29-32_Pan_orig_.jpg?responsive" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>13:30/14:00</span></div>
-      <h3>Regresso a Alicante</h3>
-      <p class="stop-note">Levar sandes para comer pelo caminho ou já na praia.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>tarde</span></div>
-      <h3>Playa de San Juan</h3>
-      <p class="stop-note"> Praia que tem os postos de nadador salvador semelhante a Miami.</p>
-      <div class="stop-photo"><img src="https://x.cdrst.com/zona/mr2/fotos/playa_de_san_juan/playa_de_san_juan_c6e0ad75d438cceb1fa6da01a63e88bc.jpg" alt="Playa de San Juan, Alicante" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 5 · 1 de agosto</span>
-  <h2>Cala Granadella + Cala El Portet 🚗</h2>
-  <p class="day-sub">O dia das praias mais bonitas do roteiro - águas transparentes, penhascos e muito protetor solar.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>08:00</span></div>
-      <h3>Saída de Alicante</h3>
-      <p class="stop-note">🚗 Cerca de 1h15/1h30 até à Cala Granadella.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>09:30–13:00</span></div>
-      <h3>Cala Granadella ⭐⭐⭐</h3>
-      <p class="stop-note">Chegar cedo. Nadar, aproveitar a água transparente, fotos:)</p>
-      <div class="tag-row"><span class="tag">sandes</span><span class="tag">muita água</span><span class="tag">protetor solar</span></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cala%20de%20la%20Granadella%2C%20J%C3%A1vea%2C%20Espa%C3%B1a%2C%202014-07-01%2C%20DD%2037.JPG?width=900" alt="Cala Granadella, Xàbia — água cristalina" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>13:00</span></div>
-      <h3>Deslocação</h3>
-      <p class="stop-note">🚗 Cala Granadella → Cala El Portet: cerca de 25–35 minutos.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>14:00–17:30</span></div>
-      <h3>Cala El Portet</h3>
-      <p class="stop-note">Baía abrigada de água turquesa, uma das mais bonitas da Costa Blanca.</p>
-      <div class="stop-photo"><img src="https://www.bindleyproperties.com/objetos/temp/source/bindley/bindleyproperties-noticias_67b0814ca43d5-source.jpeg" loading="lazy" decoding="async"></div>
-     
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>18:00/18:30</span></div>
-      <h3>Regresso a Alicante</h3>
-    </div>
-  </div>
-
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 6 · 2 de agosto</span>
-  <h2>Castelo de Santa Bárbara + despedida de Alicante</h2>
-  <p class="day-sub">Manhã no grande ponto turístico da cidade, últimos passeios junto ao mar e comboio para Valência às 14:40.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>09:30</span></div>
-      <h3>Castelo de Santa Bárbara ⭐⭐⭐</h3>
-      <p class="stop-note">O grande ponto turístico de Alicante. Ver: muralhas, vistas sobre a cidade, porto, praias.</p>
-      <div class="tag-row"><span class="tag">⏱️ 1h30–2h</span></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg?width=900" alt="Castillo de Santa Bárbara, Alicante" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>depois</span></div>
-      <h3>Últimos pontos</h3>
-      <p class="stop-note">Casa Carbonell — edifício histórico junto à Explanada — e um passeio final pelo porto e marina.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20Carbonell%2C%20Alicante.jpg?width=900" alt="Casa Carbonell, Alicante" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Alicante%20desde%20el%20Castillo%20de%20Santa%20B%C3%A1rbara.JPG?width=900" alt="Porto de Alicante" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>12:45/13:00</span></div>
-      <h3>Voltar ao alojamento</h3>
-      <p class="stop-note">Buscar as malas e seguir para a estação.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="transfer">
-  <span class="day-tag">🚆 Mudança de cidade</span>
-  <h2>Alicante → Valência</h2>
-  <div class="route">
-    <div class="route-stop">
-      <div class="city">Alicante</div>
-      <div class="time mono">14:40</div>
-      <div class="date">2 de agosto</div>
-    </div>
-    <div class="route-line"><span class="bus">🚆</span></div>
-    <div class="route-stop">
-      <div class="city">Valência</div>
-      <div class="time mono">17:09</div>
-      <div class="date">2 de agosto</div>
-    </div>
-    <div class="route-meta">Estação Valencia-Joaquín Sorolla</div>
-  </div>
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 7 · 2 de agosto (sábado)</span>
-  <h2>Chegada + Ruzafa + centro iluminado + L'Umbracle</h2>
-  <p class="day-sub">Chegada a Valência, check-in, compras e uma noite a começar em Ruzafa e a acabar em grande no L'Umbracle.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>17:09</span></div>
-      <h3>Chegada a Valência</h3>
-      <p class="stop-note">🚆 Estação: Valencia-Joaquín Sorolla.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>18:00</span></div>
-      <h3>Ir para o alojamento</h3>
-      <p class="stop-note">Como são 5 pessoas com malas, a opção mais prática é 🚕 táxi/Uber: 10–15 min, cerca de 10–15 € no total (2–3 € cada).</p>
-      <p class="stop-note" style="margin-top:12px;">Check-in: 📍 C/ de Tirant lo Blanch, 9</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>18:15/18:30</span></div>
-      <h3>Compras no Mercadona</h3>
-      <p class="stop-note">A pé ou pequeno trajeto de autocarro, dependendo do supermercado escolhido.</p>
-      <div class="tag-row"><span class="tag">pequenos-almoços</span><span class="tag">águas</span><span class="tag">comida para praia</span><span class="tag">refeições</span></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>20:30/21:00</span></div>
-      <h3>Ruzafa</h3>
-      <p class="stop-note">Alojamento → Ruzafa: 🚶 a pé (25–30 min), 🚌 autocarro, ou 🚕 Uber (6–10 €). Com 5 pessoas cansadas, o Uber compensa.</p>
-      <p class="stop-note" style="margin-top:12px;">Jantar no FINCA Bar de Barra, em Ruzafa.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>noite</span></div>
-      <h3>Passeio noturno pelo centro iluminado</h3>
-      <p class="stop-note">A pé: Ruzafa → Estación del Norte → Plaza de Toros de Valencia → Plaça de l'Ajuntament. Muito bonito à noite.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900" alt="Plaça de l'Ajuntament, Valência, à noite" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>00:00</span></div>
-      <h3>L'Umbracle / MYA</h3>
-      <p class="stop-note">Centro → Cidade das Artes: 🚕 Uber, 8–12 € (cerca de 2 € cada, divididos por 5). Não se recomenda ir a pé de noite.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Umbr%C3%A1culo%2C%20Ciudad%20de%20las%20Artes%20y%20las%20Ciencias%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-29%2C%20DD%2043.JPG?width=900" alt="L'Umbracle, Ciudad de las Artes y las Ciencias, Valência" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;">Regresso Cidade das Artes → alojamento: 🚶 10–15 minutos a pé. Não é preciso Uber.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 8 · 3 de agosto (domingo)</span>
-  <h2>Centro histórico + Cidade das Artes + Praia + Marina</h2>
-  <p class="day-sub">O dia principal: manhã de monumentos, tarde futurista na Cidade das Artes, pôr do sol na Malvarrosa e noite na Marina.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>09:30</span></div>
-      <h3>Saída para o centro histórico</h3>
-      <p class="stop-note">🚌 Autocarro (~20 min, usar SUMA) ou 🚕 Uber (8–10 €, dividido por 5 fica aceitável). Comprar 1 cartão SUMA 10.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>manhã</span></div>
-      <h3>Percurso a pé no centro</h3>
-      <div class="poi-chain">
-        <span>1 · Mercado Central</span>
-        <span>2 · La Lonja de la Seda</span>
-        <span>3 · Plaza Redonda</span>
-        <span>4 · Catedral</span>
-        <span>5 · Plaza de la Virgen</span>
-        <span>6 · Barrio del Carmen</span>
-        <span>7 · Torres de Serranos</span>
-      </div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20mercado%20central%20de%20Valencia.JPG?width=900" alt="Mercado Central de Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Consulado%20del%20Mar%20y%20Lonja%20de%20la%20Seda%20en%20Valencia.jpg?width=900" alt="La Lonja de la Seda, Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Redonda%20Valencia%2001.JPG?width=900" alt="Plaza Redonda, Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catedral%20de%20Valencia%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20160.JPG?width=900" alt="Catedral de Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20de%20la%20Virgen%20-%20Valencia.jpg?width=900" alt="Plaza de la Virgen, Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carrer%20dels%20Soguers%2C%20barri%20del%20Carme%2C%20Val%C3%A8ncia.jpg?width=900" alt="Barrio del Carmen, Valência" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Serrano%2C%20Valencia.JPG?width=900" alt="Torres de Serranos, Valência" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>13:00</span></div>
-      <h3>Rooftop no Atenea Sky</h3>
-      <p class="stop-note">Bebida e vista da cidade. Não ficar muito tempo — a tarde ainda vai longa.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>14:00</span></div>
-      <h3>Voltar ao alojamento</h3>
-      <p class="stop-note">🚌 Autocarro ou 🚕 Uber (5 pessoas divididas, fica barato). Almoço leve — sandes e comida do Mercadona — e descanso.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>15:30</span></div>
-      <h3>Cidade das Artes e das Ciências</h3>
-      <p class="stop-note">🚶 10–15 minutos a pé do alojamento — aqui é onde ele é perfeito.</p>
-      <div class="poi-chain">
-        <span>L'Hemisfèric</span>
-        <span>Museu das Ciências</span>
-        <span>Palau de les Arts</span>
-        <span>L'Umbracle de dia</span>
-        <span>lago</span>
-      </div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Hemisf%C3%A9rico%2C%20Ciudad%20de%20las%20Artes%20y%20las%20Ciencias%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-29%2C%20DD%2071.JPG?width=900" alt="L'Hemisfèric, Ciudad de las Artes y las Ciencias" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Museu%20de%20les%20Ciencies%20Principe%20Felipe.Valencia.jpg?width=900" alt="Museu de les Ciències Príncipe Felipe" loading="lazy" decoding="async"></div>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Palau%20de%20les%20Arts%20Reina%20Sof%C3%ADa%2C%20Valencia%20-%20Jan%202007.jpg?width=900" alt="Palau de les Arts Reina Sofía" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;">Sem tempo para o Oceanogràfic desta vez.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>17:30</span></div>
-      <h3>Playa de la Malvarrosa</h3>
-      <p class="stop-note">🚌 Cidade das Artes → Malvarrosa: 20–30 minutos. Levar toalhas, comida e água. Ficar até ao pôr do sol.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atardecer%20en%20la%20Playa%20Malvarrosa.jpg?width=900" alt="Pôr do sol na Playa de la Malvarrosa, Valência" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>noite</span></div>
-      <h3>Marina de València</h3>
-      <p class="stop-note">Passeio: Malvarrosa → Marina. Ambiente de luzes, barcos, bares e esplanadas.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Veles%20e%20Vents.jpg?width=900" alt="Marina de València, edifício Veles e Vents" loading="lazy" decoding="async"></div>
-      <p class="stop-note" style="margin-top:12px;">Regresso: 🚕 Uber Marina → alojamento, 8–12 € divididos por 5.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="day-header">
-  <span class="day-tag">Dia 9 · 4 de agosto (segunda-feira)</span>
-  <h2>El Carmen + Mercado de Colón + Madrid</h2>
-  <p class="day-sub">Última manhã em Valência antes do comboio das 17:57 de regresso a Madrid.</p>
-</div>
-
-<div class="timeline">
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>manhã</span></div>
-      <h3>El Carmen</h3>
-      <p class="stop-note">Check-out e malas deixadas no alojamento. Ruas antigas, arte urbana, Torres de Serranos e Torres de Quart.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Cuart%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%2093.JPG?width=900" alt="Torres de Quart, Valência" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>almoço</span></div>
-      <h3>Mercado de Colón</h3>
-      <p class="stop-note">Passear e tomar algo.</p>
-      <div class="stop-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mercado%20de%20Col%C3%B3n%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20165.JPG?width=900" alt="Mercado de Colón, Valência" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>15:30</span></div>
-      <h3>Voltar ao alojamento</h3>
-      <p class="stop-note">Buscar as malas.</p>
-    </div>
-  </div>
-
-  <div class="stop">
-    <div class="stop-card">
-      <div class="stop-time mono"><span>16:30</span></div>
-      <h3>Ir para a estação</h3>
-      <p class="stop-note">Valencia-Joaquín Sorolla Station. Com malas: 🚕 Uber/táxi, cerca de 10 min, 8–12 €.</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="transfer">
-  <span class="day-tag">🚆 Mudança de cidade</span>
-  <h2>Valência → Madrid</h2>
-  <div class="route">
-    <div class="route-stop">
-      <div class="city">Valência</div>
-      <div class="time mono">17:57</div>
-      <div class="date">4 de agosto</div>
-    </div>
-    <div class="route-line"><span class="bus">🚆</span></div>
-    <div class="route-stop">
-      <div class="city">Madrid</div>
-      <div class="time mono">chegada</div>
-      <div class="date">4 de agosto</div>
-    </div>
-    <div class="route-meta">Fim do roteiro — boa viagem de regresso! 🚆</div>
-  </div>
-</div>
-
 <footer>
+  <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
   <div class="sig">Boa viagem, meninas ✈</div>
   <p>Roteiro feito com carinho para a nossa escapadinha a Madrid, Alicante e Valência.</p>
+  <div class="footer-stickers">
+    <span>🎀</span><span style="animation-delay:-1s;">✈️</span><span style="animation-delay:-2s;">🌸</span><span style="animation-delay:-3s;">✨</span><span style="animation-delay:-1.5s;">🤍</span>
+  </div>
 </footer>
 
+<script>
+// ============ Navbar scroll state + mobile toggle ============
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelector('.nav-links');
+const navToggle = document.querySelector('.nav-toggle');
+
+function onScroll(){
+  if(window.scrollY > 40){ navbar.classList.add('scrolled'); }
+  else{ navbar.classList.remove('scrolled'); }
+  updateProgress();
+}
+window.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+navToggle?.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ============ Scroll progress bar ============
+const progressBar = document.querySelector('.progress-bar');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop || document.body.scrollTop);
+  const height = h.scrollHeight - h.clientHeight;
+  const pct = height > 0 ? (scrolled / height) * 100 : 0;
+  if(progressBar) progressBar.style.width = pct + '%';
+}
+
+// ============ Countdown to trip departure ============
+(function countdown(){
+  const target = new Date('2026-07-28T22:00:00');
+  const els = {
+    d: document.querySelector('[data-cd="days"]'),
+    h: document.querySelector('[data-cd="hours"]'),
+    m: document.querySelector('[data-cd="mins"]'),
+  };
+  const label = document.querySelector('[data-cd-label]');
+  function tick(){
+    const now = new Date();
+    let diff = target - now;
+    if(diff <= 0){
+      if(label) label.textContent = 'Boa viagem! ✈️';
+      if(els.d) els.d.textContent = '00';
+      if(els.h) els.h.textContent = '00';
+      if(els.m) els.m.textContent = '00';
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins = Math.floor((diff / (1000*60)) % 60);
+    if(els.d) els.d.textContent = String(days).padStart(2,'0');
+    if(els.h) els.h.textContent = String(hours).padStart(2,'0');
+    if(els.m) els.m.textContent = String(mins).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 30000);
+})();
+
+// ============ Reveal on scroll ============
+const revealEls = document.querySelectorAll('.stop, .night-card, .weather-card, .checklist-card');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// ============ Interactive map ============
+const mapButtons = document.querySelectorAll('.map-select-btn');
+const mapFrame = document.querySelector('.map-frame-wrap iframe');
+mapButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    mapButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if(mapFrame) mapFrame.src = btn.dataset.map;
+  });
+});
+
+// ============ Checklist with localStorage ============
+(function checklist(){
+  const items = document.querySelectorAll('.checklist-item input');
+  const fill = document.querySelector('.checklist-progress-fill');
+  const percentLabel = document.querySelector('.checklist-percent');
+  const STORAGE_KEY = 'girlstrip-checklist-2026';
+
+  function load(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      items.forEach(i => { if(saved[i.dataset.id]) i.checked = true; });
+    }catch(e){ /* ignore corrupt storage */ }
+  }
+  function save(){
+    const state = {};
+    items.forEach(i => { state[i.dataset.id] = i.checked; });
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){ /* storage unavailable */ }
+  }
+  function updateProgressUI(){
+    const total = items.length;
+    const done = Array.from(items).filter(i => i.checked).length;
+    const pct = total ? Math.round((done/total)*100) : 0;
+    if(fill) fill.style.width = pct + '%';
+    if(percentLabel) percentLabel.textContent = done + ' de ' + total + ' itens prontos (' + pct + '%)';
+  }
+  items.forEach(i => {
+    i.addEventListener('change', () => { save(); updateProgressUI(); });
+  });
+  load();
+  updateProgressUI();
+})();
+
+</script>
 </body>
 </html>
