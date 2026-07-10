@@ -1286,10 +1286,24 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
 </footer>
 
 <script>
+// ============ Reveal on scroll (progressive enhancement) ============
+// Only enable the fade-in effect if JS actually runs; otherwise content stays fully visible.
+document.documentElement.classList.add('js-reveal');
+
 // ============ Navbar scroll state + mobile toggle ============
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelector('.nav-links');
 const navToggle = document.querySelector('.nav-toggle');
+
+// ============ Scroll progress bar ============
+const progressBar = document.querySelector('.progress-bar');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop || document.body.scrollTop);
+  const height = h.scrollHeight - h.clientHeight;
+  const pct = height > 0 ? (scrolled / height) * 100 : 0;
+  if(progressBar) progressBar.style.width = pct + '%';
+}
 
 function onScroll(){
   if(window.scrollY > 40){ navbar.classList.add('scrolled'); }
@@ -1305,16 +1319,6 @@ navToggle?.addEventListener('click', () => {
 navLinks?.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
-
-// ============ Scroll progress bar ============
-const progressBar = document.querySelector('.progress-bar');
-function updateProgress(){
-  const h = document.documentElement;
-  const scrolled = (h.scrollTop || document.body.scrollTop);
-  const height = h.scrollHeight - h.clientHeight;
-  const pct = height > 0 ? (scrolled / height) * 100 : 0;
-  if(progressBar) progressBar.style.width = pct + '%';
-}
 
 // ============ Countdown to trip departure ============
 (function countdown(){
@@ -1346,9 +1350,7 @@ function updateProgress(){
   setInterval(tick, 30000);
 })();
 
-// ============ Reveal on scroll (progressive enhancement) ============
-// Only enable the fade-in effect if JS actually runs; otherwise content stays fully visible.
-document.documentElement.classList.add('js-reveal');
+// ============ Reveal on scroll: attach observers ============
 const revealEls = document.querySelectorAll('.stop, .night-card, .weather-card, .checklist-card');
 if('IntersectionObserver' in window){
   const io = new IntersectionObserver((entries) => {
