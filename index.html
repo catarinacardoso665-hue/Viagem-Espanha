@@ -1398,18 +1398,42 @@ if('IntersectionObserver' in window){
 
 // ============ Interactive itinerary map ============
 const mapButtons = document.querySelectorAll('.map-select-btn');
+const mapPhotos = {
+  sol:'https://commons.wikimedia.org/wiki/Special:FilePath/Puerta%20del%20Sol%20(Madrid)%2011.jpg?width=900',
+  mayor:'https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20Mayor%20de%20Madrid%2006.jpg?width=900',
+  granvia:'https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG?width=900',
+  palace:'https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20Real%20de%20Madrid%20-%2021.jpg?width=900',
+  bernabeu:'https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%20Stadium%20-%20Exterior%2002.JPG?width=900',
+  retiro:'https://commons.wikimedia.org/wiki/Special:FilePath/Monumento%20Alfonso%20XII%2C%20parque%20del%20Retiro.JPG?width=900',
+  cristal:'https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20de%20Cristal%2C%20Retiro%2C%20Madrid.jpg?width=900',
+  debod:'https://commons.wikimedia.org/wiki/Special:FilePath/Templo%20de%20Debod%20-%2007.jpg?width=900',
+  alicante:'https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg?width=900',
+  nicolas:'https://commons.wikimedia.org/wiki/Special:FilePath/Concatedral%20Nicolas%20de%20Bari%20Alicante.JPG?width=900',
+  carbonell:'https://commons.wikimedia.org/wiki/Special:FilePath/Casa%20Carbonell%2C%20Alicante.jpg?width=900',
+  port:'https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Alicante%20desde%20el%20Castillo%20de%20Santa%20B%C3%A1rbara.JPG?width=900',
+  postiguet:'https://www.alicanteholidayvillas.com/images/page_upload/35475082_1640523955996975_3146812775594983424_n.jpg',
+  sanjuan:'https://x.cdrst.com/zona/mr2/fotos/playa_de_san_juan/playa_de_san_juan_c6e0ad75d438cceb1fa6da01a63e88bc.jpg',
+  benidorm:'https://www.civitatis.com/f/espana/benidorm/vistas-benidorm.jpg',
+  valencia:'https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900',
+  mercado:'https://munozpratsarquitectos.com/wp-content/uploads/2024/04/mercado-central-valencia.png',
+  torres:'https://veryvalencia.com/images/guide/valencia-torres-serrano.jpg',
+  quart:'https://commons.wikimedia.org/wiki/Special:FilePath/Torres%20de%20Cuart%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%2093.JPG?width=900',
+  colon:'https://commons.wikimedia.org/wiki/Special:FilePath/Mercado%20de%20Col%C3%B3n%2C%20Valencia%2C%20Espa%C3%B1a%2C%202014-06-30%2C%20DD%20165.JPG?width=900',
+  cathedral:'https://www.spanish-in-spain.es/wp-content/uploads/2023/10/catedral_de_valencia_portal_apostoles.jpg',
+  marina:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJm0zQ5Do6pNd2LDaHe-1TRWAx0O4VaEwTNsWFMVDQLXG5ku_7hZdCIxzp&s=10'
+};
 const tripLocations = {
   madrid: {
-    name:'Madrid', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG?width=900',
-    locations:[['Puerta del Sol',40.4169,-3.7036],['Plaza Mayor',40.4155,-3.7074],['Mercadona Callao',40.4197,-3.7055],['Gran Vía',40.4200,-3.7050],['Santiago Bernabéu',40.4531,-3.6883],['Lateral Fuencarral',40.4268,-3.7012],['Chueca',40.4220,-3.6991],['Malasaña',40.4281,-3.7040],['Estação Madrid-Puerta de Atocha',40.4066,-3.6890],['Estação Sur de Autobuses',40.3926,-3.6780]]
+    name:'Madrid', image:mapPhotos.granvia,
+    locations:[['Puerta del Sol',40.4169,-3.7036,mapPhotos.sol],['Plaza Mayor',40.4155,-3.7074,mapPhotos.mayor],['Mercadona Callao',40.4197,-3.7055,mapPhotos.granvia],['Gran Vía',40.4200,-3.7050,mapPhotos.granvia],['Santiago Bernabéu',40.4531,-3.6883,mapPhotos.bernabeu],['Lateral Fuencarral',40.4268,-3.7012,mapPhotos.retiro],['Chueca',40.4220,-3.6991,mapPhotos.cristal],['Malasaña',40.4281,-3.7040,mapPhotos.debod],['Estação Madrid-Puerta de Atocha',40.4066,-3.6890,mapPhotos.palace],['Estação Sur de Autobuses',40.3926,-3.6780,mapPhotos.sol]]
   },
   alicante: {
-    name:'Alicante', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg?width=900',
-    locations:[['Estação de Alicante Terminal',38.3456,-0.4907],['Explanada de España',38.3444,-0.4795],['Mercado Central de Alicante',38.3498,-0.4901],['Castillo de Santa Bárbara',38.3451,-0.4797],['Playa de San Juan',38.3732,-0.4133],['Benidorm',38.5411,-0.1225],['Cala Granadella',38.7458,0.1938],['Cala del Portet',38.6987,0.1441]]
+    name:'Alicante', image:mapPhotos.alicante,
+    locations:[['Estação de Alicante Terminal',38.3456,-0.4907,mapPhotos.carbonell],['Explanada de España',38.3444,-0.4795,mapPhotos.port],['Mercado Central de Alicante',38.3498,-0.4901,mapPhotos.nicolas],['Castillo de Santa Bárbara',38.3451,-0.4797,mapPhotos.alicante],['Playa de San Juan',38.3732,-0.4133,mapPhotos.sanjuan],['Benidorm',38.5411,-0.1225,mapPhotos.benidorm],['Cala Granadella',38.7458,0.1938,mapPhotos.postiguet],['Cala del Portet',38.6987,0.1441,mapPhotos.carbonell]]
   },
   valencia: {
-    name:'Valência', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900',
-    locations:[['Estação Valencia-Joaquín Sorolla',39.4591,-0.3824],['Ruzafa',39.4614,-0.3748],['Mercado Central de València',39.4745,-0.3788],['Catedral de València',39.4753,-0.3756],['Atenea Sky',39.4697,-0.3763],['Ciudad de las Artes e das Ciências',39.4547,-0.3505],['Playa de la Malvarrosa',39.4756,-0.3232],['Marina de València',39.4610,-0.3255],['El Carmen',39.4785,-0.3805],['Mercado de Colón',39.4697,-0.3696],["L'Umbracle",39.4544,-0.3500]]
+    name:'Valência', image:mapPhotos.valencia,
+    locations:[['Estação Valencia-Joaquín Sorolla',39.4591,-0.3824,mapPhotos.valencia],['Ruzafa',39.4614,-0.3748,mapPhotos.colon],['Mercado Central de València',39.4745,-0.3788,mapPhotos.mercado],['Catedral de València',39.4753,-0.3756,mapPhotos.cathedral],['Atenea Sky',39.4697,-0.3763,mapPhotos.valencia],['Ciudad de las Artes e das Ciências',39.4547,-0.3505,mapPhotos.marina],['Playa de la Malvarrosa',39.4756,-0.3232,mapPhotos.sanjuan],['Marina de València',39.4610,-0.3255,mapPhotos.marina],['El Carmen',39.4785,-0.3805,mapPhotos.quart],['Mercado de Colón',39.4697,-0.3696,mapPhotos.colon],["L'Umbracle",39.4544,-0.3500,mapPhotos.torres]]
   }
 };
 let tripMap;
@@ -1433,9 +1457,9 @@ function showCityOnMap(city){
   const locations = cityData.locations;
   if(tripMarkers) tripMarkers.clearLayers();
   updateMapCard(city, locations.length);
-  const markers = locations.map(([name,lat,lng], index) => {
+  const markers = locations.map(([name,lat,lng,pinImage], index) => {
     const popup = `<div class="map-popup"><small>Paragem ${index + 1}</small><strong>${name}</strong></div>`;
-    return L.marker([lat,lng], {icon:pinIcon(index + 1, cityData.image, name), riseOnHover:true}).bindPopup(popup);
+    return L.marker([lat,lng], {icon:pinIcon(index + 1, pinImage, name), riseOnHover:true}).bindPopup(popup);
   });
   const route = L.polyline(locations.map(([,lat,lng]) => [lat,lng]), {color:'#C85B83', weight:3, opacity:.82, dashArray:'3 9', lineCap:'round'});
   tripMarkers = L.featureGroup([...markers, route]).addTo(tripMap);
