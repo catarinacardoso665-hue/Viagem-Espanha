@@ -1247,16 +1247,16 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
     <span class="expenses-total">0 €</span>
   </div>
   <div class="expense-grid">
-    <label class="expense-card"><input type="checkbox" data-expense="10"><span><strong>Passe de 24h em Madrid</strong><span class="price">8,40 €</span></span></label>
-    <label class="expense-card"><input type="checkbox" data-expense="8"><span><strong>Cacifo em Madrid</strong><span class="price">5 € </span></span></label>
-    <label class="expense-card"><input type="checkbox" data-expense="6"><span><strong>Cacifo em Alicante</strong><span class="price">5 €  </span></span></label>
-    <label class="expense-card"><input type="checkbox" data-expense="7"><span><strong>Cacifo em Valência</strong><span class="price">5 €</span></span></label>
+    <label class="expense-card"><input type="checkbox" data-expense="8.4"><span><strong>Passe de 24h em Madrid</strong><span class="price">8,40 €</span></span></label>
+    <label class="expense-card"><input type="checkbox" data-expense="5"><span><strong>Cacifo em Madrid</strong><span class="price">5 € </span></span></label>
+    <label class="expense-card"><input type="checkbox" data-expense="5"><span><strong>Cacifo em Alicante</strong><span class="price">5 €  </span></span></label>
+    <label class="expense-card"><input type="checkbox" data-expense="5"><span><strong>Cacifo em Valência</strong><span class="price">5 €</span></span></label>
     <label class="expense-card"><input type="checkbox" data-expense="15"><span><strong>Transportes em Valência</strong><span class="price">15 €</span></span></label>
-     <label class="expense-card"><input type="checkbox" data-expense="80"><span><strong>Aluguer de carro (2 dias)</strong><span class="price">25-30 € (Temos mesmo que ver)</span></span></label>
-      <label class="expense-card"><input type="checkbox" data-expense="25"><span><strong>Teatro Kapital(Discoteca Madrid)</strong><span class="price">21 €</span></span></label>
-    <label class="expense-card"><input type="checkbox" data-expense="20"><span><strong>Marmarela(Discoteca Alicante)</strong><span class="price">16 €</span></span></label>
+     <label class="expense-card"><input type="checkbox" data-expense="30"><span><strong>Aluguer de carro (2 dias)</strong><span class="price">25-30 € (Temos mesmo que ver)</span></span></label>
+      <label class="expense-card"><input type="checkbox" data-expense="21"><span><strong>Teatro Kapital(Discoteca Madrid)</strong><span class="price">21 €</span></span></label>
+    <label class="expense-card"><input type="checkbox" data-expense="16"><span><strong>Marmarela(Discoteca Alicante)</strong><span class="price">16 €</span></span></label>
     <label class="expense-card"><input type="checkbox" data-expense="15"><span><strong>Marina (Discoteca Valência)</strong><span class="price">15 €</span></span></label>
-   <label class="expense-card"><input type="checkbox" data-expense="15"><span><strong>Mya (Discoteca Valência)</strong><span class="price">22 €</span></span></label>
+   <label class="expense-card"><input type="checkbox" data-expense="22"><span><strong>Mya (Discoteca Valência)</strong><span class="price">22 €</span></span></label>
       <label class="expense-card"><input type="checkbox" data-expense="15"><span><strong> Lateral(Restaurante de Tapas)</strong><span class="price">15€ (Preço Médio)</span></span></label>
      
      
@@ -1429,7 +1429,7 @@ mapButtons.forEach(btn => {
     const amount = Array.from(items)
       .filter(item => item.checked)
       .reduce((sum, item) => sum + Number(item.dataset.expense), 0);
-    if(total) total.textContent = amount + ' €';
+    if(total) total.textContent = amount.toLocaleString('pt-PT', {minimumFractionDigits: amount % 1 !== 0 ? 2 : 0, maximumFractionDigits: 2}) + ' €';
     try{
       localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(items).map(item => item.checked)));
     }catch(e){ /* storage unavailable */ }
