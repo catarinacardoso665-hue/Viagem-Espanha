@@ -77,6 +77,7 @@ body::after{
 
 a{ color:inherit; text-decoration:none; }
 img{ display:block; width:100%; height:100%; object-fit:cover; }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
 h1,h2,h3,h4{ font-family:var(--serif); color:var(--text); font-weight:600; }
 .eyebrow{
@@ -470,12 +471,40 @@ html.js-reveal .stop.in-view{ opacity:1; transform:translateY(0); }
 .map-select-btn.active, .map-select-btn:hover{ background:var(--pink-dark); color:#fff; transform:translateY(-2px); }
 .map-frame-wrap{
   border-radius:var(--radius); overflow:hidden; border:1px solid var(--border);
-  box-shadow:var(--shadow-card); height:420px;
+  box-shadow:0 28px 58px -28px rgba(117,35,72,.45); height:460px; position:relative;
+  background:var(--pink-soft);
 }
 .map-frame-wrap iframe, #trip-map{ width:100%; height:100%; border:0; }
-.leaflet-popup-content-wrapper, .leaflet-popup-tip{ font-family:var(--sans); }
-.leaflet-popup-content{ color:var(--text); }
+.map-frame-wrap::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:450;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.5), inset 0 -85px 80px -72px rgba(59,30,48,.6);
+}
+.leaflet-container{ font-family:var(--sans); background:var(--pink-soft); }
+.leaflet-tile{ filter:saturate(.72) sepia(.10) hue-rotate(290deg) brightness(1.07); }
+.leaflet-control-zoom{ border:1px solid rgba(255,255,255,.85)!important; border-radius:14px!important; overflow:hidden; box-shadow:0 10px 24px rgba(74,39,64,.18)!important; }
+.leaflet-control-zoom a{ width:34px!important; height:34px!important; line-height:34px!important; color:var(--pink-dark)!important; border-color:var(--border)!important; }
+.leaflet-popup-content-wrapper{ border-radius:18px!important; padding:0!important; overflow:hidden; box-shadow:0 14px 30px rgba(59,30,48,.23)!important; }
+.leaflet-popup-content{ color:var(--text); margin:0!important; min-width:205px; }
+.leaflet-popup-tip{ background:#fffdfc!important; }
+.map-popup{ padding:12px 14px 14px; }
+.map-popup small{ display:block; color:var(--pink-dark); text-transform:uppercase; letter-spacing:.11em; font-size:9px; font-weight:700; margin-bottom:3px; }
+.map-popup strong{ display:block; font-family:var(--serif); font-size:17px; line-height:1.2; }
+.map-pin{ background:transparent; border:0; }
+.map-pin__dot{ width:48px; height:48px; position:relative; border-radius:50% 50% 50% 0; transform:rotate(-45deg); overflow:hidden; border:3px solid #fffdfc; box-shadow:0 8px 18px rgba(74,39,64,.3); background:var(--pink); transition:transform .22s ease, box-shadow .22s ease; }
+.map-pin__dot::after{ content:""; position:absolute; inset:0; background:linear-gradient(145deg, transparent 40%, rgba(59,30,48,.24)); }
+.map-pin__dot img{ width:100%; height:100%; object-fit:cover; transform:rotate(45deg) scale(1.45); }
+.map-pin__number{ position:absolute; z-index:2; top:50%; left:50%; transform:translate(-50%,-50%) rotate(45deg); color:#fff; font-weight:700; font-size:12px; line-height:1; text-shadow:0 1px 4px rgba(59,30,48,.8); }
+.map-pin:hover .map-pin__dot{ transform:rotate(-45deg) scale(1.15); box-shadow:0 12px 24px rgba(74,39,64,.38); }
+.map-city-card{ position:absolute; z-index:500; left:20px; bottom:20px; width:min(265px,calc(100% - 40px)); border:1px solid rgba(255,255,255,.78); border-radius:20px; overflow:hidden; color:#fff; box-shadow:0 14px 32px rgba(59,30,48,.32); pointer-events:none; background:var(--night); }
+.map-city-card__image{ height:82px; position:relative; }
+.map-city-card__image::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(59,30,48,.1),rgba(59,30,48,.58)); }
+.map-city-card__body{ padding:10px 14px 12px; background:rgba(59,30,48,.92); }
+.map-city-card__eyebrow{ display:block; color:var(--gold-soft); font-size:9px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.map-city-card strong{ display:block; font-family:var(--serif); font-size:22px; line-height:1.1; margin-top:2px; }
+.map-city-card span:last-child{ display:block; font-size:11px; opacity:.83; margin-top:3px; }
+.map-route-label{ background:rgba(255,253,252,.92); border:1px solid var(--border); color:var(--pink-dark); border-radius:999px; padding:5px 10px; box-shadow:0 5px 14px rgba(74,39,64,.16); font-family:var(--sans); font-size:10px; font-weight:700; }
 .map-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:22px; }
+@media(max-width:640px){ .map-section{ padding:0 16px; } .map-frame-wrap{ height:430px; border-radius:22px; } .map-city-card{ left:12px; bottom:12px; width:215px; } .map-city-card__image{ height:60px; } }
 
 /* ---------- Checklist ---------- */
 .checklist-section{ max-width:900px; margin:110px auto 0; padding:0 28px; position:relative; z-index:2; }
@@ -1191,6 +1220,14 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
   </div>
   <div class="map-frame-wrap">
     <div id="trip-map" role="application" aria-label="Mapa com os locais do roteiro"></div>
+    <aside class="map-city-card" aria-live="polite">
+      <div class="map-city-card__image"><img id="map-city-image" src="" alt=""></div>
+      <div class="map-city-card__body">
+        <span class="map-city-card__eyebrow">Roteiro pela cidade</span>
+        <strong id="map-city-name">Madrid</strong>
+        <span id="map-city-count">10 paragens para guardar</span>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -1362,18 +1399,47 @@ if('IntersectionObserver' in window){
 // ============ Interactive itinerary map ============
 const mapButtons = document.querySelectorAll('.map-select-btn');
 const tripLocations = {
-  madrid: [['Puerta del Sol',40.4169,-3.7036],['Plaza Mayor',40.4155,-3.7074],['Mercadona Callao',40.4197,-3.7055],['Gran Vía',40.4200,-3.7050],['Santiago Bernabéu',40.4531,-3.6883],['Lateral Fuencarral',40.4268,-3.7012],['Chueca',40.4220,-3.6991],['Malasaña',40.4281,-3.7040],['Estación Madrid-Puerta de Atocha',40.4066,-3.6890],['Estación Sur de Autobuses',40.3926,-3.6780]],
-  alicante: [['Estación de Alicante Terminal',38.3456,-0.4907],['Explanada de España',38.3444,-0.4795],['Mercado Central de Alicante',38.3498,-0.4901],['Castillo de Santa Bárbara',38.3451,-0.4797],['Playa de San Juan',38.3732,-0.4133],['Benidorm',38.5411,-0.1225],['Cala Granadella',38.7458,0.1938],['Cala del Portet',38.6987,0.1441]],
-  valencia: [['Estación Valencia-Joaquín Sorolla',39.4591,-0.3824],['Ruzafa',39.4614,-0.3748],['Mercado Central de València',39.4745,-0.3788],['Catedral de València',39.4753,-0.3756],['Atenea Sky',39.4697,-0.3763],['Ciudad de las Artes y las Ciencias',39.4547,-0.3505],['Playa de la Malvarrosa',39.4756,-0.3232],['Marina de València',39.4610,-0.3255],['El Carmen',39.4785,-0.3805],['Mercado de Colón',39.4697,-0.3696],['L Umbracle',39.4544,-0.3500]]
+  madrid: {
+    name:'Madrid', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Calle%20Gran%20Via.001%20-%20Madrid.JPG?width=900',
+    locations:[['Puerta del Sol',40.4169,-3.7036],['Plaza Mayor',40.4155,-3.7074],['Mercadona Callao',40.4197,-3.7055],['Gran Vía',40.4200,-3.7050],['Santiago Bernabéu',40.4531,-3.6883],['Lateral Fuencarral',40.4268,-3.7012],['Chueca',40.4220,-3.6991],['Malasaña',40.4281,-3.7040],['Estação Madrid-Puerta de Atocha',40.4066,-3.6890],['Estação Sur de Autobuses',40.3926,-3.6780]]
+  },
+  alicante: {
+    name:'Alicante', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Alicante%20Castillo%20de%20Santa%20B%C3%A1rbara%2001.jpg?width=900',
+    locations:[['Estação de Alicante Terminal',38.3456,-0.4907],['Explanada de España',38.3444,-0.4795],['Mercado Central de Alicante',38.3498,-0.4901],['Castillo de Santa Bárbara',38.3451,-0.4797],['Playa de San Juan',38.3732,-0.4133],['Benidorm',38.5411,-0.1225],['Cala Granadella',38.7458,0.1938],['Cala del Portet',38.6987,0.1441]]
+  },
+  valencia: {
+    name:'Valência', image:'https://commons.wikimedia.org/wiki/Special:FilePath/Plaza%20del%20Ayuntamiento%20de%20Valencia.JPG?width=900',
+    locations:[['Estação Valencia-Joaquín Sorolla',39.4591,-0.3824],['Ruzafa',39.4614,-0.3748],['Mercado Central de València',39.4745,-0.3788],['Catedral de València',39.4753,-0.3756],['Atenea Sky',39.4697,-0.3763],['Ciudad de las Artes e das Ciências',39.4547,-0.3505],['Playa de la Malvarrosa',39.4756,-0.3232],['Marina de València',39.4610,-0.3255],['El Carmen',39.4785,-0.3805],['Mercado de Colón',39.4697,-0.3696],["L'Umbracle",39.4544,-0.3500]]
+  }
 };
 let tripMap;
 let tripMarkers;
+function pinIcon(index, image, name){
+  return L.divIcon({
+    className:'map-pin', iconSize:[52,58], iconAnchor:[24,50], popupAnchor:[0,-49],
+    html:`<div class="map-pin__dot"><img src="${image}" alt=""><span class="map-pin__number">${index}</span></div><span class="sr-only">${name}</span>`
+  });
+}
+function updateMapCard(city, count){
+  const cityData = tripLocations[city];
+  document.getElementById('map-city-image').src = cityData.image;
+  document.getElementById('map-city-image').alt = `Vista de ${cityData.name}`;
+  document.getElementById('map-city-name').textContent = cityData.name;
+  document.getElementById('map-city-count').textContent = `${count} paragens para guardar`;
+}
 function showCityOnMap(city){
-  const locations = tripLocations[city];
-  if(!tripMap || !locations) return;
+  const cityData = tripLocations[city];
+  if(!tripMap || !cityData) return;
+  const locations = cityData.locations;
   if(tripMarkers) tripMarkers.clearLayers();
-  tripMarkers = L.featureGroup(locations.map(([name,lat,lng]) => L.marker([lat,lng]).bindPopup(name))).addTo(tripMap);
-  tripMap.fitBounds(tripMarkers.getBounds(), {padding:[32,32],maxZoom:13});
+  updateMapCard(city, locations.length);
+  const markers = locations.map(([name,lat,lng], index) => {
+    const popup = `<div class="map-popup"><small>Paragem ${index + 1}</small><strong>${name}</strong></div>`;
+    return L.marker([lat,lng], {icon:pinIcon(index + 1, cityData.image, name), riseOnHover:true}).bindPopup(popup);
+  });
+  const route = L.polyline(locations.map(([,lat,lng]) => [lat,lng]), {color:'#C85B83', weight:3, opacity:.82, dashArray:'3 9', lineCap:'round'});
+  tripMarkers = L.featureGroup([...markers, route]).addTo(tripMap);
+  tripMap.fitBounds(tripMarkers.getBounds(), {padding:[54,54],maxZoom:13});
 }
 if(document.getElementById('trip-map') && window.L){
   tripMap = L.map('trip-map',{scrollWheelZoom:false});
