@@ -536,7 +536,7 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
       <li><a href="#mapa">Mapa</a></li>
       <li><a href="#checklist">Checklist</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Abrir menu"></button>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </div>
 </nav>
 
@@ -570,7 +570,6 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
 
 <div class="ticket-wrap"><div class="ticket">
       <div class="ticket-stop"><div class="city">Porto</div><div class="time">22:00</div><div class="date">28 de julho</div></div>
-      <div class="ticket-line"></div>
       <div class="ticket-line"><span class="icon">🚌</span></div>
       <div class="ticket-stop"><div class="city">Madrid</div><div class="time">06:30</div><div class="date">29 de julho</div></div>
       <div class="ticket-meta">Estación Sur de Autobuses · viagem noturna, ~8h30</div>
@@ -735,7 +734,6 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
       <h2>Madrid → Alicante</h2>
       <div class="ticket">
         <div class="ticket-stop"><div class="city">Madrid</div><div class="time">11:05</div><div class="date">30 de julho</div></div>
-        <div class="ticket-line"></div>
         <div class="ticket-line"><span class="icon">🚆</span></div>
         <div class="ticket-stop"><div class="city">Alicante</div><div class="time">13:31</div><div class="date">30 de julho</div></div>
         <div class="ticket-meta">Madrid Atocha → Terminal de Alicante</div>
@@ -931,7 +929,6 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
       <h2>Alicante → Valência</h2>
       <div class="ticket">
         <div class="ticket-stop"><div class="city">Alicante</div><div class="time">14:40</div><div class="date">2 de agosto</div></div>
-        <div class="ticket-line"></div>
         <div class="ticket-line"><span class="icon">🚆</span></div>
         <div class="ticket-stop"><div class="city">Valência</div><div class="time">17:09</div><div class="date">2 de agosto</div></div>
         <div class="ticket-meta">Estação Valencia-Joaquín Sorolla</div>
@@ -1118,10 +1115,20 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
       <h2>Valência → Madrid</h2>
       <div class="ticket">
         <div class="ticket-stop"><div class="city">Valência</div><div class="time">17:57</div><div class="date">4 de agosto</div></div>
-        <div class="ticket-line"></div>
         <div class="ticket-line"><span class="icon">🚆</span></div>
         <div class="ticket-stop"><div class="city">Madrid</div><div class="time">chegada</div><div class="date">4 de agosto</div></div>
-        <div class="ticket-meta">Fim do roteiro — boa viagem de regresso! </div>
+      <div class="ticket-meta">Fim do roteiro — boa viagem de regresso! </div>
+      </div>
+    </div>
+<div class="transfer-block">
+      <div class="ornament">⋆ ˚ ✦ ˚ ⋆</div>
+      <span class="transfer-tag">Mudança de cidade</span>
+      <h2>Madrid → Porto</h2>
+      <div class="ticket">
+        <div class="ticket-stop"><div class="city">Madrid</div><div class="time">23:45</div><div class="date">4 de agosto</div></div>
+        <div class="ticket-line"><span class="icon">🚌</span></div>
+        <div class="ticket-stop"><div class="city">Porto</div><div class="time">06:14</div><div class="date">5 de agosto</div></div>
+        <div class="ticket-meta">Viagem noturna de regresso</div>
       </div>
     </div>
 <div class="quote-block">
@@ -1169,11 +1176,6 @@ footer p{ color:var(--text-soft); font-size:14.5px; max-width:460px; margin:0 au
   </div>
   <div class="map-frame-wrap">
     <div id="trip-map" role="application" aria-label="Mapa com os locais do roteiro"></div>
-  </div>
-  <div class="map-links">
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Madrid,+Spain" target="_blank" rel="noopener"> Madrid no Google Maps</a>
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Alicante,+Spain" target="_blank" rel="noopener"> Alicante no Google Maps</a>
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Valencia,+Spain" target="_blank" rel="noopener"> Valência no Google Maps</a>
   </div>
 </section>
 
@@ -1312,9 +1314,13 @@ onScroll();
 
 navToggle?.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
 });
 navLinks?.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  });
 });
 
 // ============ Countdown to trip departure ============
